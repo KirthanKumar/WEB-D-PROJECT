@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav>
+        <label class="company_name">E - Hub</label>
+        <span class="search_bar">
+            <input type="text" list="search_options" placeholder="Search item"><img class="search_icon"
+                src="icons8-search.gif" alt="" width="20px">
+            <datalist id="search_options">
+                <option value="Samsung Galaxy M13">Samsung Galaxy M13</option>
+                <option value="Samsung Galaxy M14">Samsung Galaxy M14</option>
+                <option value="Lenovo ThinkBook 14 Gen 2">Lenovo ThinkBook 14 Gen 2</option>
+                <option value="XIAOMI Mi 12S ULTRA">XIAOMI Mi 12S ULTRA</option>
+                <option value="Apple MacBook Air">Apple MacBook Air</option>
+                <option value="Sony bravia 164cm">Sony bravia 164cm</option>
+                <option value="Croma 4K 1080p">Croma 4K 1080p</option>
+            </datalist>
+        </span>
+        <!-- &nbsp; -->
+        <span class="drop_down_icon">
+            <img class="drop_down" src="drop_down.png" alt="" width="20px">
+        </span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <select name="item_selection" id="item_selection" class="item_selection">
+                <option value="option">
+                    <li> Select Category </li>
+                </option>
+                <option value="Laptop">
+                    <li><a href="#">Laptop</a></li>
+                </option>
+                <option value="Television">
+                    <li><a href="#">Television</a></li>
+                </option>
+                <option value="Mobile">
+                    <li><a href="#">Mobile</a></li>
+                </option>
+                <option value="PC-components">
+                    <li><a href="#">PC-components</a></li>
+                </option>
+            </select>
+            <li><a href="#">Contact</a></li>
+            <li>
+                <span class="cart"><a href="#">Cart</a>
+                    <img class="cart_icon" src="icons8-cart-64.png" alt="" width="20px">
+                </span>
+            </li>
+
+        </ul>
+    </nav>
+</body>
+
+</html>
