@@ -1,0 +1,23 @@
+body{
+font-family: ubuntu;
+}
+#heading{
+    background: rgb(194, 115, 115);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+    margin: auto;
+}
+#side{
+    float: left;
+    background: rgb(87, 48, 48);
+    font-size: 25px;
+    padding: 10px;
+    margin-right: 10px;
+    width: 40%;     
+}
+#sort{
+    background: rgb(170, 46, 46);
+    font-size: 20px;
+}
