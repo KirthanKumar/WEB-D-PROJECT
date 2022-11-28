@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +9,54 @@
     <link rel="stylesheet" href="https://fonts.google.com/download?family=Ubuntu">
     <link rel="stylesheet" href="listOfProducts.css">
 </head>
+
 <body>
     <header>
         <div id="heading">
             <h1>Available Phones</h1>
         </div>
     </header>
-    <aside >
-        <div id="side">
+    <aside>
+        <div id="side" class="s">
             <label for="sort">sort by price</label><br>
             <select name="sorting" id="sort">
-                <option value="lth">low to high</option>
-                <option value="htl">high to low</option>
-            </select><br>
+                <option value="lth">Price(highest first)</option>
+                <option value="htl">Price(lowest first)</option>
+                <option value="tb">Top Brands</option>
+                <option value="l">Latest Available</option>
+            </select>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum numquam tenetur praesentium, ad
+                reprehenderit architecto beatae id mollitia soluta magnam atque similique expedita unde, quae
+                distinctio, quo ea labore. Reprehenderit esse vero quaerat!
+            </p>
         </div>
     </aside>
-    
+    <section>
+        <div id="productDetails">
+            <ul class="products">
+                <li>
+                    <div class="img">
+                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
+                            width="200" height="200" alt="product img">
+                    </div>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, amet
+                        iusto, excepturi nesciunt necessitatibus non illum dicta temporibus perspiciatis voluptate ullam
+                        quam doloribus optio aliquam perferendis officiis unde mollitia dolorum velit quibusdam? Totam.
+                    </div>
+                </li>
+                <li class="order">
+                    <div class="img">
+                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
+                            width="200" height="200" alt="product img">
+                    </div>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, amet
+                        iusto, excepturi nesciunt necessitatibus non illum dicta temporibus perspiciatis voluptate ullam
+                        quam doloribus optio aliquam perferendis officiis unde mollitia dolorum velit quibusdam? Totam.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
 </body>
+
 </html>
