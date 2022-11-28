@@ -44,6 +44,7 @@ body{
 ul {
     list-style-type: none;
 }
-.order{
-    clear: both;
+.products{
+    display: flex;
+    flex-direction: column;
 }
