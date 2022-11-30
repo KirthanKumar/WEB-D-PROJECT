@@ -27,7 +27,37 @@ span.search_bar{
 }
 #myheader{
     background: blue;
-    height: 100px;
+    height: 150px;
     max-width: 1285;
     width: 100%;
+}
+
+
+aside{
+    float: left;
+    width: 50%;
+    background-color: rgb(105, 148, 193);
+}
+descp{
+    float: right;                                          
+    background-color:rgb(28, 36, 91);
+    width: 50%;
+    height: 500px;
+    
+}
+h1{
+    font-size: 50px; 
+    color:aliceblue;
+}
+
+p{
+    font-size: 25px;
+    color: white;
+}
+#product_img{
+    padding-left: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 600px;
+    height: 470px;
 }
