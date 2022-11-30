@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: ubuntu;
+    margin: 0;
+}
+#heading{
+    background: rgb(194, 115, 115);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 35px;
+    margin: auto;
+}
+#side{
+    border: 2px,solid black;
+    background: rgb(87, 48, 48);
+    font-size: 25px;
+    padding: 10px;
+    width: 30%;     
+    text-align: center;
+    float: left;
+}
+#sort{
+    background: rgb(213 163 178);
+    font-size: 20px;
+    text-align: left;
+    padding: 15px;
+    border-radius: 15px;
+}
+#productDetails{
+    background-color: rgb(39, 85, 126);
+    float: right;
+    width: 70%;
+}
+.img{
+    float: left;
+    width: 30%;
+}
+.description{
+    float: right;
+    width: 70%;
+    font-size: 25px;
+}
+ul {
+    list-style-type: none;
+}
+.products{
+    display: flex;
+    flex-direction: column;
+}
