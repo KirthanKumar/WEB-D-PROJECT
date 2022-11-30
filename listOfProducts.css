@@ -26,6 +26,8 @@ body{
     background: rgb(213 163 178);
     font-size: 20px;
     text-align: left;
+    padding: 15px;
+    border-radius: 15px;
 }
 #productDetails{
     background-color: rgb(39, 85, 126);
