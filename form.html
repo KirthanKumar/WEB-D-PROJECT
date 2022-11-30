@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .mainheading {
+        font-family: igino marini;
+        background-color: black;
+        padding: 5px 20px 15px 20px;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 15px 30px;
+        color: gray;
+        text-align: center;
+        font-weight: 900;
+        width: 50%;
+    }
+
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    form {
+        max-width: 1285px;
+        width: 100%;
+    }
+
+    form {
+        margin: 20px 35px;
+        padding: 10px 25px 20px 25px;
+        background-image: url(form.png);
+        background-repeat: no-repeat;
+        background-position-x: 620px;
+        background-position-y: 195px;
+        background-attachment: fixed;
+        background-color: rgba(228, 240, 245, 0.966);
+        width: 1706px;
+    }
+
+    .container,
+    textarea {
+        margin: 15px 30px;
+        font-size: 15px;
+        font-family: 'Lucida Sans';
+        background-color: black;
+        padding: 5px 20px 15px 20px;
+        border: 1px solid black;
+        border-radius: 4px;
+        color: gray;
+        width: 50%;
+    }
+
+    input[type="text"]#subject,
+    input[type="text"]#name,
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px;
+        background-color: whitesmoke;
+    }
+
+    input[type="submit"] {
+        background-color: rgb(255, 0, 0);
+        color: white;
+        padding: 12px 20px 12px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: 900;
+        font-family: igino marini;
+    }
+
+    input[type="submit"]:hover {
+        background-color: green;
+        color: white;
+    }
+</style>
+
+<body>
+    <nav id="navBar">
+        <label class="company_name">E - Hub</label><span class="search_bar">
+            <input type="text" list="search_options" placeholder="Search item"><img class="search_icon"
+                src="icons8-search.gif" alt="" width="20px">
+            <datalist id="search_options">
+                <option value="Samsung Galaxy M13">Samsung Galaxy M13</option>
+                <option value="Samsung Galaxy M14">Samsung Galaxy M14</option>
+                <option value="Lenovo ThinkBook 14 Gen 2">Lenovo ThinkBook 14 Gen 2</option>
+                <option value="XIAOMI Mi 12S ULTRA">XIAOMI Mi 12S ULTRA</option>
+                <option value="Apple MacBook Air">Apple MacBook Air</option>
+                <option value="Sony bravia 164cm">Sony bravia 164cm</option>
+                <option value="Croma 4K 1080p">Croma 4K 1080p</option>
+            </datalist>
+        </span>
+        <!-- &nbsp; -->
+        <span class="drop_down_icon">
+            <img class="drop_down" src="drop_down.png" alt="" width="20px">
+        </span>
+        <ul>
+            <li><a href="index.html">Home</a></li><select name="item_selection" id="item_selection"
+                class="item_selection">
+                <option value="option">
+                    <li> Select Category </li>
+                </option>
+                <option value="Laptop">
+                    <li><a href="#" target="_blank">Laptop</a></li>
+                </option>
+                <option value="Television">
+                    <li><a href="#" target="_blank">Television</a></li>
+                </option>
+                <option value="Mobile">
+                    <li><a href="#" target="_blank">Mobile</a></li>
+                </option>
+                <option value="PC-components">
+                    <li><a href="#" target="_blank">PC-components</a></li>
+                </option>
+            </select>
+            <li><a href="form.html" target="_blank">Contact</a></li>
+            <li>
+                <span class="cart"><a href="#">Cart</a><img class="cart_icon" src="icons8-cart-64.png" alt=""
+                        width="30px">
+                </span>
+            </li>
+
+        </ul>
+    </nav>
+    <form action="">
+        <div class="mainheading">
+            <h1>Contact Us</h1>
+            <p>Let's Get In Touch! Please fill out the form below.</p>
+        </div>
+        <div class="container">
+            <p>Your Name:<br> <input type="text" name="name" id="name" placeholder="Your Full Name" required></p>
+            <p>Your Email: <br> <input type="email" name="email" id="email" placeholder="Valid Email Addess"></p>
+            <p>Message: <br><textarea name="message" id="message" cols="30" rows="10"
+                    placeholder="Message To Us"></textarea></p>
+            <p>Subject: <br> <input type="text" name="subject" id="subject" placeholder="Job Inquiry"></p>
+            <input type="submit" value="Send">
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>
