@@ -11,21 +11,43 @@
 </head>
 
 <body>
-    <header>
-        <div id="heading">
-            <h1>Available Phones</h1>
-        </div>
-    </header>
+    <nav id="navbar">
+        <ul>
+            <div class="company_name">E - HUB</div>
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="Search item">
+            </div>
+            <li><a href="index.html"target="_blank">HOME</a> </li>
+            <li><a href="form.html">CONTACT US</a></li>
+            <li><a href="#">CART</a></li>
+        </ul>
+        <div id="heading"></div>
+    </nav>
     <aside>
         <div id="side" class="s">
-            <label for="sort">sort by price</label><br>
-            <select name="sorting" id="sort">
+            <label for="sort">Sort by </label><br>
+            <select name="sorting" id="sort" class="sortt">
                 <option value="lth">Price(highest first)</option>
                 <option value="htl">Price(lowest first)</option>
-                <option value="tb">Top Brands</option>
-                <option value="l">Latest Available</option>
             </select>
-            <p>content to displayed</p>
+            <br>
+            <div>
+                <label for="fltr">Filter By</label><br>
+                <select name="sorting" id="fltr"class="sortt">
+                    <option value="tb">Top Brands</option>
+                    <option value="l">Latest Model</option>
+                    <option value="l">Availiable</option>
+            </select>
+            </div>
+            <div>
+                <label for="pr">Price Range</label><br>
+                <select name="sorting" id="pr"class="sortt">
+                    <option value="tb">20k and below</option>
+                    <option value="tb">20k-30k</option>
+                    <option value="tb">30k-45k</option>
+                    <option value="tb">45k and above</option>
+            </select>
+            </div>
         </div>
     </aside>
     <section>
@@ -36,7 +58,7 @@
                         <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
                             width="200" height="200" alt="product img">
                     </div>
-                    <div class="description">discription of products to added 
+                    <div class="description">discription of products to added
                     </div>
                 </li>
                 <li>
@@ -44,7 +66,7 @@
                         <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
                             width="200" height="200" alt="product img">
                     </div>
-                    <div class="description">discription of products to added 
+                    <div class="description">discription of products to added
                     </div>
                 </li>
                 <li>
@@ -52,12 +74,53 @@
                         <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
                             width="200" height="200" alt="product img">
                     </div>
-                    <div class="description">discription of products to added 
+                    <div class="description">discription of products to added
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
+                            width="200" height="200" alt="product img">
+                    </div>
+                    <div class="description">discription of products to added
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
+                            width="200" height="200" alt="product img">
+                    </div>
+                    <div class="description">discription of products to added
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
+                            width="200" height="200" alt="product img">
+                    </div>
+                    <div class="description">discription of products to added
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
+                            width="200" height="200" alt="product img">
+                    </div>
+                    <div class="description">discription of products to added
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
+                            width="200" height="200" alt="product img">
+                    </div>
+                    <div class="description">discription of products to added
                     </div>
                 </li>
             </ul>
         </div>
     </section>
 </body>
+<script src="listOfProducts.js"></script>
 
 </html>
