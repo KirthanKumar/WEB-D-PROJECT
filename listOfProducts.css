@@ -89,3 +89,43 @@ ul {
     display: flex;
     flex-direction: column;
 }
+
+footer a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 15px;
+    float: left;
+}
+
+footer{
+    background-color: black;
+    overflow: hidden;
+    /* max-width: 1285px; */
+    width: 100%;
+    height: 90px;
+    border-radius: 20px;
+}
+
+footer a:hover{
+    color: black;
+    background-color: white;
+    border-radius: 30px;
+}
+
+footer a:visited{
+    color: royalblue;
+}
+
+.copyright{
+    float: right;
+}
+
+.sm-handle a{
+    background-color: gray;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 5px 10px;
+    text-decoration: none;
+}
