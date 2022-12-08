@@ -19,9 +19,13 @@ const dd=[{
     "price":45000
 }   
 ]
+if (value == "htl") {
+    dd.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+} else {
     dd.sort((a, b) => {
-        return a.price - b.price;
+        return b.price - a.price;
     });
+}
 
     let list = document.getElementById("ulList");
     list.innerHTML = ''

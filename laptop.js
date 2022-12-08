@@ -27,9 +27,13 @@ function js2Function(value) {
             "price": 45000
         }
     ]
-    d.sort((a, b) => {
-        return a.price - b.price;
-    });
+    if (value == "htl") {
+        d.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    } else {
+        d.sort((a, b) => {
+            return b.price - a.price;
+        });
+    }
 
     let list = document.getElementById("ulList");
     list.innerHTML = ''

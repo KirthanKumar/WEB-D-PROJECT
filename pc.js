@@ -26,10 +26,13 @@ function js4Function(value) {
             "price": 400
         }
     ]
-    pc.sort((a, b) => {
-        return a.price - b.price;
-    });
-
+    if (value == "htl") {
+        pc.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    } else {
+        pc.sort((a, b) => {
+            return b.price - a.price;
+        });
+    }
     let list = document.getElementById("ulList");
     list.innerHTML = ''
     pc.forEach((item) => {

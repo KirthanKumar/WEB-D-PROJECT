@@ -1,4 +1,3 @@
-document.getElementById("ulList").addEventListener("click", );
 function js1Function(value) {
 
     const dat = [
@@ -48,9 +47,13 @@ function js1Function(value) {
             "price": 23000
         }
     ]
-    dat.sort((a, b) => {
-        return a.price - b.price;
-    });
+    if (value == "htl") {
+        dat.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    } else {
+        dat.sort((a, b) => {
+            return b.price - a.price;
+        });
+    }
     console.log(dat);
     let list = document.getElementById("ulList");
     list.innerHTML = ''

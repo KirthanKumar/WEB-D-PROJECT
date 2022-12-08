@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="https://fonts.google.com/download?family=Ubuntu">
     <link rel="stylesheet" href="listOfProducts.css">
 </head>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+            if (window.location.href.indexOf("x=1")>-1) {
+            js1Function(1)
+            }else if(window.location.href.indexOf("x=2")>-1){
+                js2Function(1);
+            }else if(window.location.href.indexOf("x=3")>-1){
+                js3Function(1);
+            }else{
+                js4Function(1);
+            }
+        }, false);
+</script>
 
 <body>
     <nav id="navbar">
@@ -26,8 +39,8 @@
     <aside>
         <div id="side" class="s">
             <label for="sort">Sort by </label><br>
-            <select name="sorting" id="sort" class="sortt" onchange="js1Function(this.value);">
-                <option value="lth">Price(highest first)</option>
+            <select name="sorting" id="sort" class="sortt" onchange="js1Function(value);">
+                <option value="lth" id="lth">Price(highest first)</option>
                 <option value="htl">Price(lowest first)</option>
             </select>
             <br>
@@ -53,70 +66,6 @@
     <section>
         <div id="productDetails">
             <ul class="products" id="ulList">
-                <li>
-                    <div class="img">
-                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
-                            width="200" height="200" alt="product img">
-                    </div>
-                    <div class="description">discription of products to added
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
-                            width="200" height="200" alt="product img">
-                    </div>
-                    <div class="description">discription of products to added
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
-                            width="200" height="200" alt="product img">
-                    </div>
-                    <div class="description">discription of products to added
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
-                            width="200" height="200" alt="product img">
-                    </div>
-                    <div class="description">discription of products to added
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
-                            width="200" height="200" alt="product img">
-                    </div>
-                    <div class="description">discription of products to added
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
-                            width="200" height="200" alt="product img">
-                    </div>
-                    <div class="description">discription of products to added
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
-                            width="200" height="200" alt="product img">
-                    </div>
-                    <div class="description">discription of products to added
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
-                            width="200" height="200" alt="product img">
-                    </div>
-                    <div class="description">discription of products to added
-                    </div>
-                </li>
             </ul>
         </div>
     </section>
