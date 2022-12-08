@@ -26,7 +26,7 @@
     <aside>
         <div id="side" class="s">
             <label for="sort">Sort by </label><br>
-            <select name="sorting" id="sort" class="sortt">
+            <select name="sorting" id="sort" class="sortt" onchange="js1Function(this.value);">
                 <option value="lth">Price(highest first)</option>
                 <option value="htl">Price(lowest first)</option>
             </select>
@@ -52,7 +52,7 @@
     </aside>
     <section>
         <div id="productDetails">
-            <ul class="products">
+            <ul class="products" id="ulList">
                 <li>
                     <div class="img">
                         <img src="https://www.reliancedigital.in/medias/OnePlus-Nord-CE-2-Lite-5G-Mobile-Phones-492850035-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w2NzM0OTR8aW1hZ2UvcG5nfGltYWdlcy9oMGMvaDcwLzk4NzM5MjkxNzUwNzAucG5nfDc4M2YwMWRmMmYzYTJjZjgyYjk5ZjViYTk1ODY2NDdjMWEwN2VmMDlmMzlhZDAzMDNhZTY2MDRlZjM2NThhMGM"
@@ -129,5 +129,9 @@
     </footer>
 </body>
 <script src="listOfProducts.js"></script>
+<script src="phone.js"></script>
+<script src="pc.js"></script>
+<script src="laptop.js"></script>
+<script src="tv.js"></script>
 
 </html>

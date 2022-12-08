@@ -1,3 +1,4 @@
+document.getElementById("ulList").addEventListener("click", );
 function js1Function(value) {
 
     const dat = [
