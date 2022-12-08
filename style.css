@@ -173,7 +173,7 @@ nav ul li a {
         font-size: 15px;
     }
 
-    a:hover {
+    #navBar ul li a:hover {
         background: white;
         color: black;
     }
@@ -225,4 +225,23 @@ footer a:visited{
     border-radius: 30px;
     margin: 5px 10px;
     text-decoration: none;
+}
+
+div.login, video {
+    height: 100vh;
+    max-width: 1285px;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+form{
+    position: relative;
+    top: 25vh;
+    left: 25vw;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    opacity: 0.66;
+    width: 50%;
 }
