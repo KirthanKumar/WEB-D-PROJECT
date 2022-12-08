@@ -66,6 +66,9 @@ nav input{
     border-radius: 14px;
     padding: 20px 20px;
 }
+.fonts{
+    font-size: 20px;
+}
 
 aside{
     float: left;
@@ -73,7 +76,7 @@ aside{
     background-color: rgb(105, 148, 193);
     height: 550px;
 }
-descp{
+product_name{
     float: right;                                          
     background-color:rgb(28, 36, 91);
     width: 60%;
@@ -81,7 +84,6 @@ descp{
     
 }
 h1{
-    font-size: 50px; 
     color:aliceblue;
 }
 
