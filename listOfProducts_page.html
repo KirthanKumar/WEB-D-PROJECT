@@ -10,19 +10,18 @@
     <link rel="stylesheet" href="listOfProducts.css">
 </head>
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-            if (window.location.href.indexOf("x=1")>-1) {
+    document.addEventListener('DOMContentLoaded', function () {
+        if (window.location.href.indexOf("x=1") > -1) {
             js1Function(1)
-            }else if(window.location.href.indexOf("x=2")>-1){
-                js2Function(1);
-            }else if(window.location.href.indexOf("x=3")>-1){
-                js3Function(1);
-            }else{
-                js4Function(1);
-            }
-        }, false);
+        } else if (window.location.href.indexOf("x=2") > -1) {
+            js2Function(1);
+        } else if (window.location.href.indexOf("x=3") > -1) {
+            js3Function(1);
+        } else {
+            js4Function(1); 
+        }
+    }, false);
 </script>
-
 <body>
     <nav id="navbar">
         <ul>
@@ -30,7 +29,7 @@
             <div class="search">
                 <input type="text" name="search" id="search" placeholder="Search item">
             </div>
-            <li><a href="index.html"target="_blank">HOME</a> </li>
+            <li><a href="index.html" target="_blank">HOME</a> </li>
             <li><a href="form.html">CONTACT US</a></li>
             <li><a href="#">CART</a></li>
         </ul>
@@ -39,27 +38,27 @@
     <aside>
         <div id="side" class="s">
             <label for="sort">Sort by </label><br>
-            <select name="sorting" id="sort" class="sortt" onchange="js1Function(value);">
+            <select name="sorting" id="sort" class="sortt" onChange="onChanging(value)">
                 <option value="lth" id="lth">Price(highest first)</option>
                 <option value="htl">Price(lowest first)</option>
             </select>
             <br>
             <div>
                 <label for="fltr">Filter By</label><br>
-                <select name="sorting" id="fltr"class="sortt">
+                <select name="sorting" id="fltr" class="sortt">
                     <option value="tb">Top Brands</option>
                     <option value="l">Latest Model</option>
                     <option value="l">Availiable</option>
-            </select>
+                </select>
             </div>
             <div>
                 <label for="pr">Price Range</label><br>
-                <select name="sorting" id="pr"class="sortt">
+                <select name="sorting" id="pr" class="sortt">
                     <option value="tb">20k and below</option>
                     <option value="tb">20k-30k</option>
                     <option value="tb">30k-45k</option>
                     <option value="tb">45k and above</option>
-            </select>
+                </select>
             </div>
         </div>
     </aside>
@@ -77,10 +76,9 @@
         <a href="#" class="copyright">&copy; Copyright</a>
     </footer>
 </body>
-<script src="listOfProducts.js"></script>
 <script src="phone.js"></script>
+<script src="listOfProducts.js"></script>
 <script src="pc.js"></script>
 <script src="laptop.js"></script>
 <script src="tv.js"></script>
-
 </html>
