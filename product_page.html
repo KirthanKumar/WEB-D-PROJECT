@@ -12,7 +12,7 @@
 
 <body>
     <nav id="navbar">
-        <ul>
+        <ul class="n">
             <div class="company_name">E - HUB</div>
             <div class="search">
                 <input type="text" name="search" id="search" placeholder="Search item ">
@@ -25,24 +25,56 @@
     </nav>
     <div class="row">
     <aside>
-        
+        <div class="single-pro-image">
         <img id="product_img" src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666096848/Croma%20Assets/Computers%20Peripherals/Laptop/Images/263843_lyw43f.png/mxw_2256,f_auto"
         >
-        
+        </div>
+        <div class="small-img-group">
+            <div class="small-img-column">
+                <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666096848/Croma%20Assets/Computers%20Peripherals/Laptop/Images/263843_lyw43f.png/mxw_2256,f_auto" class="small-img">
+            </div>
+            <div class="small-img-column">
+                <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1668663643/Croma%20Assets/Computers%20Peripherals/Laptop/Images/262842_2_s8fnov.png/mxw_2256,f_auto" class="small-img">
+            </div>
+            <div class="small-img-column">
+                <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1668663647/Croma%20Assets/Computers%20Peripherals/Laptop/Images/262842_3_sadei3.png/mxw_2256,f_auto" class="small-img">
+            </div>
+            <div class="small-img-column">
+                <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1668663640/Croma%20Assets/Computers%20Peripherals/Laptop/Images/262842_1_rpu5fd.png/mxw_2256,f_auto" class="small-img">
+            </div>
+        </div>
+
     </aside>
-    <div>
-        <product-name>
-            <h1 class="fonts"><strong>Acer Aspire 3 Intel Core i3 11th Gen (15.6 inch, 8GB, 512GB, Windows 11 Home, MS Office 2021, Intel UHD, Full HD LED-Backlit Display, Silver, NX.ADDSI.011)</strong></h1>
-        </product-name>
-    </div>
-    <div>
-        
-            <p>Price: 20000</p>
-        
+    <div class="descp">
+        <div class="pro-details">
+            <div id="pname">
+            <h2><strong>Acer Aspire 3 Intel Core i3 11th Gen (15.6 inch, 8GB, 512GB, Windows 11 Home, MS Office 2021, Intel UHD, Full HD LED-Backlit Display, Silver, NX.ADDSI.011)</strong></h2>
+            </div>
+            <div id="price">
+                <h3>$20,000</h3>
+            </div>
+            <div id="buttons">
+                <input type="number" value="1">
+                <button>Add to cart</button>
+            </div>
+            <div class="borderbox">
+                <p1>Key Features</p1>
+                <ul class="p">
+                    <li><p1>Display: 39.62 cms (15.6 inches), FHD LED-Backlit</p1></li>
+                    <li><p1>Memory: 8GB DDR4, 512GB SSD ROM</p1></li>
+                    <li><p1>Processor: Intel Core i3 11th Generation</p1></li>
+                    <li><p1>OS: Windows 11 Home</p1></li>
+                    <li><p1>Graphics: Intel UHD</p1></li>
+                    <li><p1>Included Software: MS Office 2021</p1></li>
+                    <p1>Memory: 8GB DDR4, 512GB SSD ROM</p1>
+                </ul>
+            </div>
+        </div>
     </div>
     
+    
     </div>
-    <script src="script.js"></script>
+    
 </body>
 <footer>
     <a href="#">FAQ</a>
@@ -51,5 +83,24 @@
     <a href="#">Privacy Policy</a>
     <a href="#" class="copyright">&copy; Copyright</a>
 </footer>
+<script src="script.js"></script>
+<script>
+    var MainImg = document.getElementById("product_img");
+    var smallimg = document.getElementsByClassName("small-img");
+
+    smallimg[0].onclick = function(){
+        MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src = smallimg[3].src;
+    }
+</script>
+
 
 </html>
