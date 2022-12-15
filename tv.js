@@ -1,21 +1,21 @@
 const dd=[{
     "img":"https://m.media-amazon.com/images/I/41GTMteNtdL._SX300_SY300_QL70_FMwebp_.jpg",
-    "description":"MI 100 cm (40 inches) 5A Series Full HD Smart Android LED TV with 24W Dolby Audio & Metal Bezel-Less Frame (Black) (2022 Model)",
-    "price":25000},
+    "description":"MI 100 cm (40 inches) 5A Series Full HD Smart Android LED TV with 24W Dolby Audio & Metal Bezel-Less Frame (Black) (2022 Model)\n\n₹24,999",
+    "price":24999},
     {
         "img":"https://m.media-amazon.com/images/I/41ydsm+ycKL._SY300_SX300_.jpg",
-        "description":"Foxsky 127 cm (50 inches) 4K Ultra HD Smart LED TV 50FS-VS (Black)",
-        "price":20000
+        "description":"Foxsky 127 cm (50 inches) 4K Ultra HD Smart LED TV 50FS-VS (Black)\n\n₹19,999",
+        "price":19999
     },
     {
         "img":"https://m.media-amazon.com/images/I/819SRH2DKBL._AC_UY218_.jpg",
-        "description":"OnePlus 108 cm (43 inches) Y Series 4K Ultra HD Smart Android LED TV 43Y1S Pro (Black)",
+        "description":"OnePlus 108 cm (43 inches) Y Series 4K Ultra HD Smart Android LED TV 43Y1S Pro (Black)\n\n₹29,999",
         "price":29999
     },
     {
         "img":"https://m.media-amazon.com/images/I/91v4nFq0LuL._AC_UL320_.jpg",
-        "description":"Sony Bravia 108 cm (43 inches) Full HD Smart LED TV 43W6600 (Black) (2020 Model)",
-        "price":45000
+        "description":"Sony Bravia 108 cm (43 inches) Full HD Smart LED TV 43W6600 (Black) (2020 Model)\n\n₹45,999",
+        "price":45999
     }   
     ]
 function js3Function(value){
@@ -39,8 +39,9 @@ if (value == "htl") {
         img.setAttribute("height", "200");
         div.appendChild(img);
         li.append(div)
-        let desc = document.createElement("div");
+        let desc = document.createElement("a");
         desc.setAttribute("class", "description");
+        desc.setAttribute("href", "#");
         desc.innerText = item.description;
         li.append(desc);
         list.appendChild(li);
