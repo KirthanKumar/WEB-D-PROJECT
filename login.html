@@ -9,19 +9,123 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    form {
+        position: relative;
+        top: 25vh;
+        left: 25vw;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        opacity: 0.66;
+        width: 50%;
+    }
+
+    input[type="text"]#name,
+    input[type="password"]#password {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px;
+        background-color: whitesmoke;
+    }
+
+    input[type="submit"] {
+        background-color: rgb(255, 0, 0);
+        color: white;
+        padding: 12px 20px 12px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: 900;
+        font-family: igino marini;
+    }
+
+    input[type="submit"]:hover {
+        background-color: green;
+        color: white;
+    }
+
+    .loginForm span.checkSubmit {
+        display: flex;
+    }
+
+    .loginForm span.checkSubmit #getStarted {
+        margin: 20px;
+    }
+</style>
+
 <body>
+    <nav id="navBar">
+        <label class="company_name">E - Hub</label><span class="search_bar">
+            <input type="text" list="search_options" placeholder="Search item"><img class="search_icon"
+                src="icons8-search.gif" alt="" width="20px">
+            <datalist id="search_options">
+                <option value="Samsung Galaxy M13">Samsung Galaxy M13</option>
+                <option value="Samsung Galaxy M14">Samsung Galaxy M14</option>
+                <option value="Lenovo ThinkBook 14 Gen 2">Lenovo ThinkBook 14 Gen 2</option>
+                <option value="XIAOMI Mi 12S ULTRA">XIAOMI Mi 12S ULTRA</option>
+                <option value="Apple MacBook Air">Apple MacBook Air</option>
+                <option value="Sony bravia 164cm">Sony bravia 164cm</option>
+                <option value="Croma 4K 1080p">Croma 4K 1080p</option>
+                <option value="Realme GT Neo 2 128 GB (Neo Blue, 8 GB RAM)"><a href="#">Realme GT Neo 2 128 GB (Neo
+                        Blue, 8 GB RAM)</a></option>
+            </datalist>
+        </span>
+        <!-- &nbsp; -->
+        <span class="drop_down_icon">
+            <img class="drop_down" src="drop_down.png" alt="" width="20px">
+        </span>
+        <ul>
+            <li><a href="index.html">Home</a></li><select name="item_selection" id="item_selection"
+                class="item_selection">
+                <option value="option">
+                    <li> Select Category </li>
+                </option>
+                <option value="Laptop">
+                    <li><a href="listOfProducts_page.html?x=2" target="_blank">Laptop</a></li>
+                </option>
+                <option value="Television">
+                    <li><a href="listOfProducts_page.html?x=3" target="_blank">Television</a></li>
+                </option>
+                <option value="Mobile">
+                    <li><a href="listOfProducts_page.html?x=1" target="_blank">Mobile</a></li>
+                </option>
+                <option value="PC-components">
+                    <li><a href="listOfProducts_page.html?x=4" target="_blank">PC-components</a></li>
+                </option>
+            </select>
+            <li><a href="form.html" target="_blank">Contact</a></li>
+            <li>
+                <span class="cart"><a href="#">Cart</a><img class="cart_icon" src="icons8-cart-64.png" alt=""
+                        width="30px">
+                </span>
+                <span class="loginButton"><a href="login.html">Login</a></span>
+            </li>
+        </ul>
+    </nav>
     <div class="login"><video autoplay loop>
             <source src="login.mp4" type="video/mp4">
     </div>
 
-    <form action="">
+    <form action="" class="loginPage">
 
         <div class="loginForm">
             <br> <input type="text" name="name" id="name" placeholder="User Name" required>
             <br><br><input type="password" name="password" id="password" placeholder="Enter password">
             <br><br><input type="password" name="password" id="password" placeholder="Confirm password">
-            <br><br><input type="checkbox" name="rememberMe" id="rememberMe" >
-            <input type="submit" value="GET STARTED">
+            <span class="checkSubmit">
+                <br><br><input type="checkbox" name="rememberMe" id="rememberMe">
+                <input type="submit" value="GET STARTED" id="getStarted">
+            </span>
         </div>
 
     </form>

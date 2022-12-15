@@ -17,20 +17,10 @@ body {
 nav {
     background: blue;
     height: 130px;
-    max-width: 1285px;
+    max-width: 100%;
     width: 100%;
     border-radius: 65px;
 }
-
-/* #navbar::before {
-    content: "";
-    background-color: black;
-    position: absolute;
-    height: 94px;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.89;
-} */
 
 #navBar {
     position: sticky;
@@ -199,7 +189,7 @@ footer a{
 footer{
     background-color: black;
     overflow: hidden;
-    max-width: 1285px;
+    max-width: 100%;
     width: 100%;
     height: 90px;
     border-radius: 20px;
@@ -229,19 +219,9 @@ footer a:visited{
 
 div.login, video {
     height: 100vh;
-    max-width: 1285px;
+    max-width: 100%;
     width: 100%;
     position: fixed;
     z-index: -1;
 }
 
-form{
-    position: relative;
-    top: 25vh;
-    left: 25vw;
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    opacity: 0.66;
-    width: 50%;
-}
