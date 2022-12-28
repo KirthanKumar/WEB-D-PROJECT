@@ -3,20 +3,20 @@ const dat = [
         "imgurl": "https://m.media-amazon.com/images/I/71UqqpGVheL._SL1500_.jpg",
         "description": "OnePlus 8T 5G (Aquamarine Green, 8GB RAM, 128GB Storage)\n\n₹25,000",
         "price": 25000
-    },
+    },  
     {
         "imgurl": "https://rukminim1.flixcart.com/image/416/416/l3rmzrk0/mobile/y/u/s/-original-imagetmefgcxw2ye.jpeg?q=70",
-        "description": "Realme GT Neo 2 128 GB (Neo Blue, 8 GB RAM)\n\n₹30,000",
-        "price": 30000
+        "description": "Realme GT Neo 2 128 GB (Neo Blue, 8 GB RAM)\n\n₹46,000",
+        "price": 46000
     },
     {
         "imgurl": "https://m.media-amazon.com/images/I/31TCJmM4+mL._SX342_SY445_.jpg",
-        "description": "Apple iPhone 13 Pro (1TB) - Sierra Blue\n\n₹2,000",
-        "price": 2000
+        "description": "Apple iPhone 13 Pro (1TB) - Sierra Blue\n\n₹2,999",
+        "price": 2999
     },
     {
         "imgurl": "https://m.media-amazon.com/images/I/71madl67atL._SX679_.jpg",
-        "description": "Nothing Phone (1) 5G (White, 256 GB) (12 GB RAM)\n\n₹15,000",
+        "description": "Nothing Phone (1) 5G (White, 128 GB) (8 GB RAM)\n\n₹15,000",
         "price": 15000
     },
     {
@@ -26,8 +26,8 @@ const dat = [
     },
     {
         "imgurl": "https://m.media-amazon.com/images/I/41YFUk64EzL._SX300_SY300_QL70_FMwebp_.jpg",
-        "description": "iQOO 9 SE 5G (Space Fusion, 8GB RAM, 128GB Storage) | Qualcomm Snapdragon 888 | 66W Flash Charge\n\n₹28,000",
-        "price": 28000
+        "description": "iQOO 9 SE 5G (Space Fusion, 8GB RAM, 128GB Storage) | Qualcomm Snapdragon 888 | 66W Flash Charge\n\n₹45,599",
+        "price": 45599
     },
     {
         "imgurl": "https://m.media-amazon.com/images/I/61OJJSFEkBL._SX679_.jpg",
@@ -73,7 +73,51 @@ function js1Function(value) {
         desc.innerText = item.description;
         li.append(desc);
         list.appendChild(li);
-
     })
-
+}
+function sortByPrice1(value){
+    let product=[];
+    if (value=="00") {
+        for (let { imgurl, description,price } of dat) {
+            if (price<20000) {
+                product.push({ imgurl, description, price});
+            } 
+        }
+    } else if (value=="20") {
+        for (let { imgurl, description,price } of dat) {
+            if (price>20000 && price<45000) {
+                product.push({ imgurl, description, price});
+            } 
+        }
+    } else if (value=="45"){
+        for (let { imgurl, description,price } of dat) {
+            if (price>45000) {
+                product.push({ imgurl, description, price});
+            } 
+        }
+    }else{
+        js1Function(value);
+        return;
+    }
+    let list = document.getElementById("ulList");
+    list.innerHTML = ''
+    product.forEach((item) => {
+        let li = document.createElement("li");
+        let div = document.createElement("div");
+        div.setAttribute("class", "img");
+        let img = document.createElement("img");
+        img.setAttribute("src", item.imgurl);
+        img.setAttribute("alt", "product");
+        img.setAttribute("width", "200");
+        img.setAttribute("height", "200");
+        div.appendChild(img);
+        li.append(div)
+        let desc = document.createElement("a");
+        desc.setAttribute("class", "description");
+        desc.setAttribute("href", "#");
+        desc.innerText = item.description;
+        li.append(desc);
+        list.appendChild(li);
+    })
+   console.log(product);
 }

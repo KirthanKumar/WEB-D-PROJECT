@@ -1,4 +1,5 @@
-const dd=[{
+const dd=[
+    {
     "img":"https://m.media-amazon.com/images/I/41GTMteNtdL._SX300_SY300_QL70_FMwebp_.jpg",
     "description":"MI 100 cm (40 inches) 5A Series Full HD Smart Android LED TV with 24W Dolby Audio & Metal Bezel-Less Frame (Black) (2022 Model)\n\n₹24,999",
     "price":24999},
@@ -46,5 +47,49 @@ if (value == "htl") {
         li.append(desc);
         list.appendChild(li);
     })
-
+}
+function sortByPrice3(value){
+    let product=[];
+    if (value=="00") {
+        for (let { img, description,price } of dd) {
+            if (price<20000) {
+                product.push({ img, description, price});
+            } 
+        }
+    } else if (value=="20") {
+        for (let { img, description,price } of dd) {
+            if (price>20000 && price<45000) {
+                product.push({ img, description, price});
+            } 
+        }
+    } else if (value=="45"){
+        for (let { img, description,price } of dd) {
+            if (price>45000) {
+                product.push({ img, description, price});
+            } 
+        }
+    }else{
+        js3Function(value);
+        return;
+    }
+    let list = document.getElementById("ulList");
+    list.innerHTML = ''
+    product.forEach((item) => {
+        let li = document.createElement("li");
+        let div = document.createElement("div");
+        div.setAttribute("class", "img");
+        let img = document.createElement("img");
+        img.setAttribute("src", item.img);
+        img.setAttribute("alt", "product");
+        img.setAttribute("width", "200");
+        img.setAttribute("height", "200");
+        div.appendChild(img);
+        li.append(div)
+        let desc = document.createElement("a");
+        desc.setAttribute("class", "description");
+        desc.setAttribute("href", "#");
+        desc.innerText = item.description;
+        li.append(desc);
+        list.appendChild(li);
+    })
 }
