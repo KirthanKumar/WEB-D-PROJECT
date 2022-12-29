@@ -23,10 +23,9 @@ label.company_name{
 nav{
     background-color: black;
     margin: 0px;
-    border-radius: 20px;
     width:100%;
-    padding: 25px;
 }
+
 ul.n{
     list-style-type: none;
 }
@@ -59,14 +58,18 @@ nav li a:hover {
     font-size: 48px;
     margin: 18px;
 }
-.search{
+.search {
     float: left;
     color: white;
-    padding: 30px 35px;
+    background-color: white;
+    padding: 7px;
+    border-radius: 2px;
+    line-height: 15px;
+    margin-top: 30px;
 }
 
-nav input{
-    border: 2px solid black;
+nav input {
+    border: 0px solid black;
     border-radius: 14px;
     padding: 20px 20px;
 }
@@ -110,6 +113,12 @@ p1{
     color:black;
     font-family: 'League Spartan', sans-serif;
     font-weight: 100;
+}
+p2{
+    font-size: 25px;
+    color:black;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold;
 }
 .borderbox{
     border-style: solid;
