@@ -21,7 +21,7 @@ label.company_name{
 }
 
 nav{
-    background-color: rgb(6, 16, 112);
+    background-color: black;
     margin: 0px;
     border-radius: 20px;
     width:100%;
@@ -74,13 +74,13 @@ nav input{
 aside{
     float: left;
     width: 40%;
-    background-color: rgb(105, 148, 193);
+    background-color: white;
     
 }
 
 .descp{
     float: right;                                          
-    background-color:rgb(28, 36, 91);
+    background-color:whitesmoke;
     width: 60%;
     
 }   
@@ -91,7 +91,7 @@ aside{
 
 h2{
     font-family: 'League Spartan', sans-serif;;
-    color: white;
+    color: black;
     font-weight: 500;
 }
 #buttons{
@@ -100,14 +100,14 @@ h2{
 h3{
     font-size: 23px;
     line-height: 30px;
-    color:blanchedalmond;
+    color:black;
     font-family: 'League Spartan', sans-serif;
     font-weight: 400;
 
 }
 p1{
     font-size: 25px;
-    color:rgb(217, 217, 217);
+    color:black;
     font-family: 'League Spartan', sans-serif;
     font-weight: 100;
 }
@@ -135,7 +135,7 @@ product-pricebox{
 }
 #product_img{
     width: 80%;
-    margin-left: 20px;
+    margin-left:45px;
 }
 .small-img{
     width:80%;
@@ -163,7 +163,7 @@ footer{
     width: 100%;
     height: 90px;
     border-radius: 20px;
-    padding: 30px;
+    
 }
 footer a{
     text-decoration: none;
