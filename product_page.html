@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ecom product page</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/6ae2012b2f.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/6ae2012b2f.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         <div id="heading"></div>
     </nav>
     <div class="row">
-    <aside>
+    <aside id="imgmain">
         <div class="single-pro-image">
         <img id="product_img" src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666096848/Croma%20Assets/Computers%20Peripherals/Laptop/Images/263843_lyw43f.png/mxw_2256,f_auto"
         >
@@ -45,8 +45,7 @@
         </div>
 
     </aside>
-    <div class="descp">
-        <div class="pro-details">
+    <div id="descp">
             <div id="pname">
             <h2><strong>Acer Aspire 3 Intel Core i3 11th Gen (15.6 inch, 8GB, 512GB, Windows 11 Home, MS Office 2021, Intel UHD, Full HD LED-Backlit Display, Silver, NX.ADDSI.011)</strong></h2>
             </div>
@@ -71,12 +70,10 @@
                     <p1>Memory: 8GB DDR4, 512GB SSD ROM</p1>
                 </ul>
             </div>
-        </div>
     </div>
     
     
-    </div>
-    
+</div>
 </body>
 <footer>
     <a href="#">FAQ</a>
@@ -89,7 +86,6 @@
 <script>
     var MainImg = document.getElementById("product_img");
     var smallimg = document.getElementsByClassName("small-img");
-
     smallimg[0].onclick = function(){
         MainImg.src = smallimg[0].src;
     }
@@ -103,6 +99,10 @@
         MainImg.src = smallimg[3].src;
     }
 </script>
-
-
+ <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        productfilling()//function calling          
+    }, false);
+</script>
+<script src="productjsfile.js"></script>
 </html>
