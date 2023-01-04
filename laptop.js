@@ -50,7 +50,7 @@ function js2Function(value) {
         li.append(div)
         let desc = document.createElement("a");
         desc.setAttribute("class", "description");
-        desc.setAttribute("href", "#");
+        desc.setAttribute("href", "product_page.html?id=" + item.description);
         desc.innerText = item.description;
         li.append(desc);
         list.appendChild(li);
@@ -96,7 +96,7 @@ function sortByPrice2(value){
         li.append(div)
         let desc = document.createElement("a");
         desc.setAttribute("class", "description");
-        desc.setAttribute("href", "#");
+        desc.setAttribute("href", "product_page.html?id=" + item.description);
         desc.innerText = item.description;
         li.append(desc);
         list.appendChild(li);
