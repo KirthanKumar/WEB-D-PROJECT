@@ -146,6 +146,12 @@ p2{
     font-family: 'League Spartan', sans-serif;
     font-weight: bold;
 }
+li {
+    font-size: 25px;
+    color:black;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 100;
+}
 #or{
     margin-left:80px;
     margin-right:60px;
@@ -156,6 +162,7 @@ p2{
     color: gray;
     padding-left: 30px;
     margin: 20px ;
+    padding-top: 10px;
 }
 ul.p{
     list-style-type: disc;
