@@ -79,13 +79,13 @@ function sortByPrice1(value){
     let product=[];
     if (value=="00") {
         for (let { imgurl, description,price } of dat) {
-            if (price<20000) {
+            if (price<=20000) {
                 product.push({ imgurl, description, price});
             } 
         }
     } else if (value=="20") {
         for (let { imgurl, description,price } of dat) {
-            if (price>20000 && price<45000) {
+            if (price>20000 && price<=45000) {
                 product.push({ imgurl, description, price});
             } 
         }

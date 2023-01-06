@@ -24,6 +24,11 @@ const d = [
         "img": "https://m.media-amazon.com/images/I/81tkpxBTz5L._SY450_.jpg",
         "description": "Honor MagicBook 14, AMD Ryzen 5 5500U 14-inch (35.56 cm) FHD IPS Anti-Glare Thin and Light Laptop (16GB/512GB PCIe SSD/Windows 11/Fingerprint Login/Metal Body/Backlit KB/1.38Kg), Gray, NobelM-WFQ9AHNE\n\n₹45,000",
         "price": 45000
+    },
+    {
+        "img":"https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666096848/Croma%20Assets/Computers%20Peripherals/Laptop/Images/263843_lyw43f.png/mxw_2256,f_auto",
+        "description": "Acer Aspire 3 Intel Core i3 11th Gen (15.6 inch, 8GB, 512GB, Windows 11 Home, MS Office 2021, Intel UHD, Full HD LED-Backlit Display, Silver, NX.ADDSI.011)\n\n₹ 20,000",
+        "price": "20000"
     }
 ]
 function js2Function(value) {
@@ -61,13 +66,13 @@ function sortByPrice2(value){
     let product=[];
     if (value=="00") {
         for (let { img, description,price } of d) {
-            if (price<20000) {
+            if (price<=20000) {
                 product.push({ img, description, price});
             } 
         }
     } else if (value=="20") {
         for (let { img, description,price } of d) {
-            if (price>20000 && price<45000) {
+            if (price>20000 && price<=45000) {
                 product.push({ img, description, price});
             } 
         }

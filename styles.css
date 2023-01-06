@@ -5,13 +5,10 @@
     text-decoration: none;
     box-sizing: border-box;
 }
-
 body{
     
     margin: 0;
 }
-
-
 label.company_name{
     color: white;
     font-size: 30px;
@@ -96,9 +93,18 @@ h2{
     font-family: 'League Spartan', sans-serif;;
     color: black;
     font-weight: 500;
+    font-size: 30px;
+    padding: 10px;
 }
 #buttons{
-    padding: 10px 0px 20px 10px;
+    text-align: center;
+}
+.bt{
+    font-size: 20px;  
+    padding: 15px;
+    margin: 30px;
+    color: rgb(246, 253, 253);
+    background-color: black;
 }
 #button-style{
     background-color: black;
@@ -141,16 +147,19 @@ p1{
     font-weight: 100;
 }
 p2{
-    font-size: 25px;
-    color:black;
+    font-size: 30px;
+    color:rgb(31, 21, 21);
     font-family: 'League Spartan', sans-serif;
-    font-weight: bold;
+    font-weight: 500;
+    padding: 10px;
+    margin: 10px;
 }
 li {
     font-size: 25px;
     color:black;
     font-family: 'League Spartan', sans-serif;
     font-weight: 100;
+    padding: 5px;
 }
 #or{
     margin-left:80px;
@@ -163,15 +172,18 @@ li {
     padding-left: 30px;
     margin: 20px ;
     padding-top: 10px;
+    margin-top: 0;
 }
 ul.p{
     list-style-type: disc;
 }
 #pname{
     padding: 10px 14px;
+    padding-bottom: 0px;
 }
 #price{
     padding: 20px;
+    font-size: 40px;
 }
 product-pricebox{
     display: flex;

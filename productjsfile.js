@@ -1,18 +1,3 @@
-// { <script type="text/javascript">}
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     if (window.location.href.indexOf("x=1") > -1) {
-    //         js1Function(1)//function calling 
-    //     } else if (window.location.href.indexOf("x=2") > -1) {
-    //         js2Function(1);
-    //     } else if (window.location.href.indexOf("x=3") > -1) {
-    //         js3Function(1);
-    //     } else {
-    //         js4Function(1); 
-    //     }
-    // }, false);
-// </script>
-// url of page should have 2 parameters
-// array of objects containing 4 img url,description,key features,pricetag
 let arr={
         "imgurl1": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666096848/Croma%20Assets/Computers%20Peripherals/Laptop/Images/263843_lyw43f.png/mxw_2256,f_auto",
         "imgurl2":"https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666096848/Croma%20Assets/Computers%20Peripherals/Laptop/Images/263843_lyw43f.png/mxw_2256,f_auto",
@@ -26,7 +11,7 @@ let arr={
         features3:"Processor: Intel Core i3 11th Generation",
         features4:"Graphics: Intel UHD\nIncluded Software: MS Office 2021"
     }
-
+    
 function productfilling(){
     let imgmain = document.getElementById("imgmain");
     imgmain.innerHTML = '';
@@ -34,7 +19,7 @@ function productfilling(){
     let div = document.createElement("div");
     div.setAttribute("class", "single-pro-img");
     let img = document.createElement("img");
-    img.setAttribute("src",arr.imgurl5);
+    img.setAttribute("src",arr.imgurl1);
     img.setAttribute("alt", "product");
     img.setAttribute("id", "product_img");
     div.append(img);
@@ -45,7 +30,7 @@ function productfilling(){
     let div21 = document.createElement("div");
     div21.setAttribute("class", "small-img-column");
     let img21 = document.createElement("img");
-    img21.setAttribute("src", arr.imgurl1);
+    img21.setAttribute("src", arr.imgurl2);
     img21.setAttribute("alt", "product");
     img21.setAttribute("class", "small-img");
     div21.append(img21);
@@ -53,7 +38,7 @@ function productfilling(){
     let div22 = document.createElement("div");
     div22.setAttribute("class", "small-img-column");
     let img22 = document.createElement("img");
-    img22.setAttribute("src", arr.imgurl2);
+    img22.setAttribute("src", arr.imgurl3);
     img22.setAttribute("class", "small-img");
     img22.setAttribute("alt", "product");
     div22.append(img22);
@@ -61,7 +46,7 @@ function productfilling(){
     let div23 = document.createElement("div");
     div23.setAttribute("class", "small-img-column");
     let img23 = document.createElement("img");
-    img23.setAttribute("src", arr.imgurl3);// img url key to added in place imgurl
+    img23.setAttribute("src", arr.imgurl4);// img url key to added in place imgurl
     img23.setAttribute("class", "small-img");
     img23.setAttribute("alt", "product");
     div23.append(img23);
@@ -69,7 +54,7 @@ function productfilling(){
     let div24 = document.createElement("div");
     div24.setAttribute("class", "small-img-column");
     let img24 = document.createElement("img");
-    img24.setAttribute("src", arr.imgurl4);
+    img24.setAttribute("src", arr.imgurl5);
     img24.setAttribute("alt", "product");
     img24.setAttribute("class", "small-img");
     div24.append(img24);
@@ -90,9 +75,7 @@ function productfilling(){
     div1.append(h2);
     let div11=document.createElement("div");
     div11.setAttribute("id", "price");
-    let h3=document.createElement("h3");
-    h3.innerHTML=arr.price;
-    div11.append(h3);
+    div11.innerHTML=arr.price;
     div1.append(div11);
     let div13=document.createElement("div");
     div13.setAttribute("class", "borderbox");
@@ -118,4 +101,37 @@ function productfilling(){
     div13.append(u);
     product.append(div1);
     product.append(div13);
+
+    let div12=document.createElement("div");
+    div12.setAttribute("id", "buttons");
+    let bt=document.createElement("a");
+    bt.setAttribute("href","#");
+    let b=document.createElement("button");
+    b.setAttribute("class","bt");
+    b.innerHTML="ADD TO CART"
+    bt.appendChild(b);
+    let bt2=document.createElement("a");
+    bt2.setAttribute("href","#");
+    let b2=document.createElement("button");
+    b2.setAttribute("class","bt");
+    b2.innerHTML = "BUY NOW";
+    bt2.appendChild(b2);
+    div12.appendChild(bt);
+    div12.appendChild(bt2);
+    product.append(div12);
+
+    var MainImg = document.getElementById("product_img");
+    var smallimg = document.getElementsByClassName("small-img");
+    smallimg[0].onclick = function(){
+        MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src = smallimg[3].src;
+    }
 }   

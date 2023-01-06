@@ -59,13 +59,13 @@ function sortByPrice4(value){
     let product=[];
     if (value=="00") {
         for (let { img, description,price } of pc) {
-            if (price<20000) {
+            if (price<=20000) {
                 product.push({ img, description, price});
             } 
         }
     } else if (value=="20") {
         for (let { img, description,price } of pc) {
-            if (price>20000 && price<45000) {
+            if (price>20000 && price<=45000) {
                 product.push({ img, description, price});
             } 
         }
