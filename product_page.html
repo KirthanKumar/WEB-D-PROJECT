@@ -100,9 +100,13 @@
 <script src="script.js"></script>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
-        productfilling()//function calling          
+        const url = window.location.href;
+        console.log(url);
+        const id = url.slice(url.lastIndexOf('=') + 1);
+        console.log(id);
+        matchingProduct(id);       
     }, false);
 </script>
 <script src="productjsfile.js"></script>
-<script src="product_info.js"></script>
-</html>
+<script src="productData.js"></script>
+</html> 

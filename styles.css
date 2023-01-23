@@ -35,8 +35,9 @@ nav ul{
 }
 nav li{
     float: left;
-    margin: 45px 40px;
+    margin: 45px 60px;
     font-size: larger;
+    font-weight: 500;
 }
 nav li a{
     color: white;
@@ -60,7 +61,7 @@ nav li a:hover {
     color: white;
     background-color: white;
     padding: 7px;
-    border-radius: 2px;
+    border-radius: 14px;
     line-height: 15px;
     margin-top: 30px;
 }
@@ -82,7 +83,6 @@ aside{
     float: right;                                          
     background-color:whitesmoke;
     width: 60%;
-    
 }   
 
 .fonts{  
@@ -105,6 +105,7 @@ h2{
     margin: 30px;
     color: rgb(246, 253, 253);
     background-color: black;
+    border-radius: 12px;
 }
 #button-style{
     background-color: black;
@@ -197,7 +198,6 @@ product-pricebox{
 }
 .small-img{
     width:80%;
-    
 }
 .small-img-group{
     display: flex;
@@ -208,8 +208,12 @@ product-pricebox{
     border: 2px solid black;
     flex-basis: 24%;
     cursor: pointer;
-}
+    text-align: center;
 
+}
+.single-pro-img{
+    margin : 20px
+}
 .row::after{
     content: "";
     display: table;
