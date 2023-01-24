@@ -39,8 +39,12 @@ const d = [
 ]
 function js2Function(value) {
     if (value == "htl") {
+       let set= document.getElementById("pr");
+       set.value = "al";
         d.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     } else {
+        let set= document.getElementById("pr");
+        set.value = "al";
         d.sort((a, b) => {
             return b.price - a.price;
         });
@@ -89,7 +93,7 @@ function sortByPrice2(value){
             } 
         }
     }else{
-        js2Function(value);
+        window.location.reload();
         return;
     }
     let list = document.getElementById("ulList");
@@ -112,4 +116,7 @@ function sortByPrice2(value){
         li.append(desc);
         list.appendChild(li);
     })
+}
+function reload(){
+    window.location.reload();
 }

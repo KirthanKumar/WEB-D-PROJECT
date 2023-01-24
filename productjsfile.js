@@ -32,7 +32,7 @@ function productfilling(arr) {
     let div23 = document.createElement("div");
     div23.setAttribute("class", "small-img-column");
     let img23 = document.createElement("img");
-    img23.setAttribute("src", arr.imgurl4);// img url key to added in place imgurl
+    img23.setAttribute("src", arr.imgurl4);
     img23.setAttribute("class", "small-img");
     img23.setAttribute("alt", "product");
     div23.append(img23);

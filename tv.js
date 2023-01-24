@@ -26,8 +26,12 @@ const dd = [
 ]
 function js3Function(value) {
     if (value == "htl") {
+        let set= document.getElementById("pr");
+       set.value = "al";
         dd.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     } else {
+        let set= document.getElementById("pr");
+       set.value = "al";
         dd.sort((a, b) => {
             return b.price - a.price;
         });
@@ -74,7 +78,7 @@ function sortByPrice3(value) {
             }
         }
     } else {
-        js3Function(value);
+        window.location.reload();
         return;
     }
     let list = document.getElementById("ulList");

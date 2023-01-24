@@ -2,12 +2,14 @@ const dat = [
     {
         "imgurl": "https://m.media-amazon.com/images/I/71UqqpGVheL._SL1500_.jpg",
         "description": "OnePlus 8T 5G (Aquamarine Green, 8GB RAM, 128GB Storage)\n\n₹25,000",
-        "price": 25000
+        "price": 25000,
+        "id":"1+8t"
     },  
     {
         "imgurl": "https://rukminim1.flixcart.com/image/416/416/l3rmzrk0/mobile/y/u/s/-original-imagetmefgcxw2ye.jpeg?q=70",
         "description": "Realme GT Neo 2 128 GB (Neo Blue, 8 GB RAM)\n\n₹46,000",
-        "price": 46000
+        "price": 46000,
+        "id":"gtneo2"
     },
     {
         "imgurl": "https://m.media-amazon.com/images/I/31TCJmM4+mL._SX342_SY445_.jpg",
@@ -31,7 +33,7 @@ const dat = [
         "imgurl": "https://m.media-amazon.com/images/I/41YFUk64EzL._SX300_SY300_QL70_FMwebp_.jpg",
         "description": "iQOO 9 SE 5G (Space Fusion, 8GB RAM, 128GB Storage) | Qualcomm Snapdragon 888 | 66W Flash Charge\n\n₹45,599",
         "price": 45599,
-        "id": "iqoose"
+        "id": "iqoo-se"
     },
     {
         "imgurl": "https://m.media-amazon.com/images/I/61OJJSFEkBL._SX679_.jpg",
@@ -49,13 +51,17 @@ const dat = [
         "imgurl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202207/07/jw1Ya3hCu1TTGupj.png?x-amz-process=image/format,webp/quality,Q_80",
         "description": "OPPO Reno7 Pro 5G 8GB RAM 256GB Storage\n\n₹23,000",
         "price": 23000,
-        "id": "oppo"
+        "id": "oppo-reno"
     }
 ]
 function js1Function(value) {    
     if (value == "htl") {
+        let set= document.getElementById("pr");
+       set.value = "al";
         dat.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     } else {
+        let set= document.getElementById("pr");
+       set.value = "al";
         dat.sort((a, b) => {
             return b.price - a.price;
         });
@@ -103,7 +109,7 @@ function sortByPrice1(value){
             } 
         }
     }else{
-        js1Function(value);
+        window.location.reload();
         return;
     }
     let list = document.getElementById("ulList");

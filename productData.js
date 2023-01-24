@@ -17,7 +17,7 @@ let arrs = [{
     "imgurl2": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1657282791/Croma%20Assets/Computers%20Peripherals/Laptop/Images/256601_2_ptkunz.png/mxw_2256,f_auto",
     "imgurl3": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1657282795/Croma%20Assets/Computers%20Peripherals/Laptop/Images/256601_3_mjbvva.png/mxw_2256,f_auto",
     "imgurl4": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1657282795/Croma%20Assets/Computers%20Peripherals/Laptop/Images/256601_3_mjbvva.png/mxw_2256,f_auto",
-    "imgurl5": "",
+    "imgurl5": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1657282804/Croma%20Assets/Computers%20Peripherals/Laptop/Images/256601_oocztd.png/mxw_2256,f_auto",
     "heading": "Apple MacBook Air 2022 (M2, 13.6 inch, 8GB, 256GB, macOS, Starlight)",
     price: "₹50,000.00",
     features1: "Processor: Apple M2",

@@ -33,8 +33,12 @@ const pc = [
 function js4Function(value) {
     
     if (value == "htl") {
+        let set= document.getElementById("pr");
+       set.value = "al";
         pc.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     } else {
+        let set= document.getElementById("pr");
+       set.value = "al";
         pc.sort((a, b) => {
             return b.price - a.price;
         });
@@ -82,7 +86,7 @@ function sortByPrice4(value){
             } 
         }
     }else{
-        js4Function(value);
+        window.location.reload();
         return;
     }
     let list = document.getElementById("ulList");
