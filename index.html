@@ -70,22 +70,22 @@
             <img class="drop_down" src="drop_down.png" alt="" width="20px">
         </span>
         <ul>
-            <li><a href="index.html">Home</a></li><select name="item_selection" id="item_selection"
+            <li><a href="index.html">Home</a></li><select name="item_selection" id="item_selection" onchange="oncall(value)"
                 class="item_selection">
                 <option value="option">
                     <li> Select Category </li>
                 </option>
                 <option value="Laptop">
-                    <li><a href="listOfProducts_page.html?x=2" target="_blank">Laptop</a></li>
+                    <li>Laptop</a></li> 
                 </option>
                 <option value="Television">
-                    <li><a href="listOfProducts_page.html?x=3" target="_blank">Television</a></li>
+                    <li>Television</a></li>
                 </option>
                 <option value="Mobile">
-                    <li><a href="listOfProducts_page.html?x=1" target="_blank">Mobile</a></li>
+                    <li>Mobile</a></li>
                 </option>
                 <option value="PC-components">
-                    <li><a href="listOfProducts_page.html?x=4" target="_blank">PC-components</a></li>
+                    <li>PC-components</a></li>
                 </option>
             </select>
             <li><a href="form.html" target="_blank">Contact</a></li>
@@ -196,5 +196,19 @@
     <a href="#">Privacy Policy</a>
     <a href="#" class="copyright">&copy; Copyright</a>
 </footer>
-
+<script>
+    function oncall(value){
+        if (value=="Laptop") {
+            window.location.href = "listOfProducts_page.html?x=2";
+        } else if(value=="Television"){
+            window.location.href = "listOfProducts_page.html?x=3";
+        } else if(value=="Mobile"){
+            window.location.href = "listOfProducts_page.html?x=1";
+        }else if(value=="PC-components"){
+            window.location.href = "listOfProducts_page.html?x=4";
+        }else{
+            window.location.reload();
+        }
+    }
+</script>
 </html>
