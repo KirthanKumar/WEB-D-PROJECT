@@ -20,6 +20,7 @@ nav {
     max-width: 100%;
     width: 100%;
     border-radius: 25px;
+    z-index: 5;
 }
 
 #navBar {
@@ -71,7 +72,8 @@ label.company_name {
 }
 
 label.company_name:hover{
-    display: none;
+  color: white;
+  background-color: black;
 }
 
 nav ul {
@@ -198,7 +200,7 @@ footer{
     height: 90px;
     border-radius: 20px;
     position: absolute;
-    top: 175vh;
+    top: 255vh;
 }
 
 footer a:hover{
@@ -238,7 +240,7 @@ div.login, video {
 .slideshow-container {
   max-width: 1000px;
   position: relative;
-  top: 50vh;
+  top: -15vh;
   margin: auto;
   display: flex;
 }
@@ -365,7 +367,7 @@ div.login, video {
     position: absolute;
     top: 0;
     /* left: calc(50% - 100px); */
-    left: 8vw;
+    left: 4vw;
     opacity: 0;
     animation: display 10s infinite;
   }
