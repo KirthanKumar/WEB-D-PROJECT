@@ -20,7 +20,7 @@ nav {
     max-width: 100%;
     width: 100%;
     border-radius: 25px;
-    z-index: 5;
+    z-index: 2;
 }
 
 #navBar {
@@ -79,7 +79,7 @@ label.company_name:hover{
 nav ul {
     float: right;
     margin-right: 20px;
-    width: 50%;
+    width: 58%;
 }
 
 nav ul li {
@@ -183,16 +183,16 @@ nav ul li a {
     }
 }
 
-footer a{
+/* footer a{
     text-decoration: none;
     color: white;
     text-align: center;
     padding: 20px;
     margin: 15px;
     float: left;
-}
+} */
 
-footer{
+/* footer{
     background-color: black;
     overflow: hidden;
     max-width: 100%;
@@ -201,9 +201,9 @@ footer{
     border-radius: 20px;
     position: absolute;
     top: 255vh;
-}
+} */
 
-footer a:hover{
+/* footer a:hover{
     color: black;
     background-color: white;
     border-radius: 30px;
@@ -215,7 +215,7 @@ footer a:visited{
 
 .copyright{
     float: right;
-}
+} */
 
 .sm-handle a{
     background-color: gray;
@@ -384,3 +384,117 @@ div.login, video {
   img:nth-child(5) {
     animation-delay: 8s;
   }
+
+  /* ------------------------------------------------- */
+  body
+{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+#containerFooter
+{
+    width: 100%;
+    background-color: rgb(29, 29, 29);
+    color: white;
+    letter-spacing: 1px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 15px 300px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 300vh;
+}
+#containerFooter h3:hover, #containerFooter p:hover
+{
+    color: lightslategray;
+    cursor: pointer;
+}
+#webFooter
+{
+    padding-top: 30px;
+    font-size: 12px;
+}
+#credit 
+{
+    width: 100%;
+    margin: auto;
+    padding: 20px 0;
+    text-align: center;
+    background-color: rgb(29, 29, 29);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 350vh;
+}
+
+#credit a
+{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+#credit a:hover
+{
+    color: black;
+    background-color: white;
+}
+
+/* ----------------------------- MEDIA QUERY --------------------------- */
+
+@media(max-width: 1350px)
+{
+    #containerFooter
+    {
+        padding: 15px 200px;
+    }
+}
+@media(max-width: 1166px)
+{
+    #containerFooter
+    {
+        padding: 15px 100px;
+    }
+}
+@media(max-width: 950px)
+{
+    #containerFooter
+    {
+        padding: 15px 50px;
+    }
+}
+@media(max-width: 850px)
+{
+    #containerFooter
+    {
+        font-size: 13px;
+    }
+    #webFooter
+    {
+        font-size: 10px;
+    }
+}
+@media(max-width: 750px)
+{
+    #containerFooter
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 15px 100px;
+    }
+    #webFooter
+    {
+        padding: 15px 20px;
+    }
+}
+@media(max-width: 540px)
+{
+    #containerFooter
+    {
+        padding: 0 25px;
+    }
+}

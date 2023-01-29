@@ -11,18 +11,30 @@
 </head>
 
 <style>
-    .flexbox {
+    .flexbox,
+    .flexboxbox {
         display: flex;
         max-width: 100%;
         position: absolute;
         top: 125vh;
     }
 
-    .flexbox div {
+    .flexbox div a{
+        background-color: black;
+        color: white;
+        margin-left: 15px;
+    }
+
+    .flexboxbox {
+        top: 240vh;
+    }
+
+    .flexbox div,
+    .flexboxbox div {
         flex-grow: 1;
         padding: 0px;
         border: 2px solid gray;
-        margin: 12px;
+        margin: 0px;
         box-shadow: 3px 3px 10px 0px;
         flex-wrap: wrap;
         width: 25%;
@@ -33,15 +45,6 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         padding: 30px;
     }
-
-    button {
-        padding: 10px;
-        width: 80%;
-        margin: 30px;
-        color: white;
-        background-color: gray;
-    }
-
 
     .flexbox div a :hover {
         display: none;
@@ -54,15 +57,19 @@
             <input type="text" list="search_options" placeholder="Search item"><img class="search_icon"
                 src="icons8-search.gif" alt="" width="20px">
             <datalist id="search_options">
-                <option value="Samsung Galaxy M13">Samsung Galaxy M13</option>
-                <option value="Samsung Galaxy M14">Samsung Galaxy M14</option>
-                <option value="Lenovo ThinkBook 14 Gen 2">Lenovo ThinkBook 14 Gen 2</option>
-                <option value="XIAOMI Mi 12S ULTRA">XIAOMI Mi 12S ULTRA</option>
-                <option value="Apple MacBook Air">Apple MacBook Air</option>
-                <option value="Sony bravia 164cm">Sony bravia 164cm</option>
-                <option value="Croma 4K 1080p">Croma 4K 1080p</option>
-                <option value="Realme GT Neo 2 128 GB (Neo Blue, 8 GB RAM)"><a href="#">Realme GT Neo 2 128 GB (Neo
-                        Blue, 8 GB RAM)</a></option>
+                <option value="APPLE 2022 MacBook AIR M2">APPLE 2022 MacBook AIR M2</option>
+                <option value="LENOVA ThinkBook 14 Gen 2 (Intel)">LENOVA ThinkBook 14 Gen 2 (Intel)</option>
+                <option value="HP Pavilion Gaming Ryzen 7 Octa Core AMD R7-5800H">HP Pavilion Gaming Ryzen 7 Octa Core AMD R7-5800H</option>
+                <option value="DELL XPS 17">DELL XPS 17</option>
+                <option value="Honor MagicBook 14">Honor MagicBook 14</option>
+                <option value="Acer Aspire 3 Intel Core i3 11th Gen">Acer Aspire 3 Intel Core i3 11th Gen</option>
+                <option value="OnePlus 8T 5G">OnePlus 8T 5G</option>
+                <option value="Realme GT Neo 2 128 GB">Realme GT Neo 2 128 GB</option>
+                <option value="Apple iPhone 13 Pro (1TB)">Apple iPhone 13 Pro (1TB)</option>
+                <option value="Nothing Phone (1) 5G">Nothing Phone (1) 5G</option>
+                <option value="OnePlus 10R 5G">OnePlus 10R 5G</option>
+                <option value="iQOO 9 SE 5G">iQOO 9 SE 5G</option>
+                
             </datalist>
         </span>
         <!-- &nbsp; -->
@@ -90,7 +97,7 @@
             </select>
             <li><a href="form.html" target="_blank">Contact</a></li>
             <li>
-                <span class="cart"><a href="#">Cart</a><img class="cart_icon" src="icons8-cart-64.png" alt=""
+                <span class="cart"><a href="cart.html">Cart</a><img class="cart_icon" src="icons8-cart-64.png" alt=""
                         width="30px">
                 </span>
                 <span class="loginButton"><a href="login.html">Login</a></span>
@@ -99,33 +106,33 @@
     </nav>
     <br>
     <div class="pic-ctn">
-        <img src="https://picsum.photos/1400/700?t=1" alt="" class="pic">
-        <img src="https://picsum.photos/1400/700?t=2" alt="" class="pic">
-        <img src="https://picsum.photos/1400/700?t=3" alt="" class="pic">
-        <img src="https://picsum.photos/1400/700?t=4" alt="" class="pic">
-        <img src="https://picsum.photos/1400/700?t=5" alt="" class="pic">
+        <img src="https://source.unsplash.com/1400x700/?technology" alt="" class="pic">
+        <img src="https://source.unsplash.com/1400x700/?electronics" alt="" class="pic">
+        <img src="https://source.unsplash.com/1400x700/?coding" alt="" class="pic">
+        <img src="https://source.unsplash.com/1400x700/?CPU" alt="" class="pic">
+        <img src="https://source.unsplash.com/1400x700/?mobile" alt="" class="pic">
     </div>
     <!-- Slideshow container -->
     <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-            <a href="listOfProducts_page.html?x=2" target="_blank" rel="noopener noreferrer"><img
+            <a href="listOfProducts_page.html?x=2" rel="noopener noreferrer"><img
                     src="https://source.unsplash.com/1400x700/?laptop, coding" style="width:100%"></a>
         </div>
 
         <div class="mySlides fade">
-            <a href="listOfProducts_page.html?x=3" target="_blank" rel="noopener noreferrer"><img
+            <a href="listOfProducts_page.html?x=3" rel="noopener noreferrer"><img
                     src="https://source.unsplash.com/1400x700/?television" style="width:100%"></a>
         </div>
 
         <div class="mySlides fade">
-            <a href="listOfProducts_page.html?x=1" target="_blank" rel="noopener noreferrer"><img
+            <a href="listOfProducts_page.html?x=1" rel="noopener noreferrer"><img
                     src="https://source.unsplash.com/1400x700/?mobile" style="width:100%"></a>
         </div>
 
         <div class="mySlides fade">
-            <a href="listOfProducts_page.html?x=4" target="_blank" rel="noopener noreferrer"><img
+            <a href="listOfProducts_page.html?x=4" rel="noopener noreferrer"><img
                     src="https://source.unsplash.com/1400x700/?microprocesor, transistor" style="width:100%"></a>
         </div>
 
@@ -139,7 +146,7 @@
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
         <span class="dot" onclick="currentSlide(4)"></span>
-        
+
     </div>
     <div class="flexbox">
         <div>
@@ -147,59 +154,143 @@
             <h2>Television</h2>
             <p>The main benefit of a smart TV is access to many channels that offer TV programs, movies, and music
                 without the need to connect a TV antenna or subscribe to a cable/satellite service.</p>
-            <a href="listOfProducts_page.html?x=3" target="_blank" rel="noopener noreferrer"> <button>See
-                    More</button></a>
+            <a href="listOfProducts_page.html?x=3"  rel="noopener noreferrer">Click Here To See
+                More Of This</a>
         </div>
         <div>
             <img src="flexbox1.jpg" alt="This Is A Image" width="100%">
             <h2>Laptop</h2>
             <p>Today, laptops are used in a variety of settings, such as at work, in education, for playing games, web
                 browsing, for personal multimedia, and for general home computer use.</p>
-            <a href="listOfProducts_page.html?x=2" target="_blank" rel="noopener noreferrer"> <button>See
-                    More</button></a>
-        </div>
-        <div>
-            <img src="flexbox2.jpg" alt="This Is A Image" width="100%">
-            <h2>Television</h2>
-            <p>The main benefit of a smart TV is access to many channels that offer TV programs, movies, and music
-                without the need to connect a TV antenna or subscribe to a cable/satellite service.</p>
-            <a href="listOfProducts_page.html?x=3" target="_blank" rel="noopener noreferrer"> <button>See
-                    More</button></a>
-        </div>
-        <div>
-            <img src="flexbox1.jpg" alt="This Is A Image" width="100%">
-            <h2>Laptop</h2>
-            <p>Today, laptops are used in a variety of settings, such as at work, in education, for playing games, web
-                browsing, for personal multimedia, and for general home computer use.</p>
-            <a href="listOfProducts_page.html?x=2" target="_blank" rel="noopener noreferrer"> <button>See
-                    More</button></a>
+            <a href="listOfProducts_page.html?x=2" rel="noopener noreferrer">Click Here To See
+                More Of This</a>
         </div>
         <div>
             <img src="flexbox4.jpg" alt="This Is A Image" width="100%">
             <h2>Smart Phone</h2>
             <p> A smartphone has more advanced features, including web browsing, software applications and a mobile OS.
             </p>
-            <a href="listOfProducts_page.html?x=1" target="_blank" rel="noopener noreferrer"> <button id="phones">See
-                    More</button></a>
+            <a href="listOfProducts_page.html?x=1"  rel="noopener noreferrer">Click Here To See
+                More Of This</a>
         </div>
         <div>
             <img src="flexbox3.jpg" alt="This Is A Image" width="100%">
-            <h2>PC-components</h2>
+            <h2>PCcomponent</h2>
             <p>The five basic components of a computer are Input Unit, Output Unit, Memory Unit, Control Unit and
-                Arithmetic and Logical Unit.</p>
-            <a href="listOfProducts_page.html?x=4" target="_blank" rel="noopener noreferrer"> <button>See
-                    More</button></a>
+                ALU.</p>
+            <a href="listOfProducts_page.html?x=4" rel="noopener noreferrer">Click Here To See
+                More Of This</a>
+        </div>
+        <div>
+            <img src="flexbox5.jpg" alt="This Is A Image" width="100%">
+            <h2>Laptop</h2>
+            <p>Today, laptops are used in a variety of settings, such as at work, in education, for playing games, web
+                browsing, for personal multimedia, and for general home computer use.</p>
+            <a href="listOfProducts_page.html?x=2"  rel="noopener noreferrer">Click Here To See
+                More Of This</a>
+        </div>
+        <div>
+            <img src="slider3.jpg" alt="This Is A Image" width="100%">
+            <h2>Television</h2>
+            <p>The main benefit of a smart TV is access to many channels that offer TV programs, movies, and music
+                without the need to connect a TV antenna or subscribe to a cable/satellite service.</p>
+            <a href="listOfProducts_page.html?x=3"  rel="noopener noreferrer">Click Here To See
+                More Of This</a>
+        </div>
+    </div>
+    <br>
+    <div class="flexboxbox">
+        <div>
+            <a href="product_page.html?id=acerasp"><img
+                    src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666096848/Croma%20Assets/Computers%20Peripherals/Laptop/Images/263843_lyw43f.png/mxw_2256,f_auto"
+                    alt="This Is A Image" width="100%"></a>
+            <p>Acer Aspire 3 Intel Core i3 11th Gen 15.6 inch, 8GB, 512GB, Windows 11 Home
+                ₹20,000</p>
+        </div>
+        <div>
+            <a href="product_page.html?id=1+8t"><img src="https://m.media-amazon.com/images/I/71UqqpGVheL._SL1500_.jpg"
+                    alt="This Is A Image" width="100%"></a>
+            <p>OnePlus 8T 5G (Aquamarine Green, 8GB RAM, 128GB Storage)
+                ₹25,000</p>
+        </div>
+        <div>
+            <a href="product_page.html?id=ssd500"><img src="https://m.media-amazon.com/images/I/61E7DbDiZ8L._AC_UY218_.jpg" alt="This Is A Image"
+                width="100%"></a>
+            <p> Crucial BX500 500GB 2.5-inch SATA 3D NAND Internal SSD Upto 550 MB/s
+                ₹2,500
+            </p>
+        </div>
+        <div>
+            <a href="product_page.html?id=MI_tv"><img
+                    src="https://m.media-amazon.com/images/I/41GTMteNtdL._SX300_SY300_QL70_FMwebp_.jpg"
+                    alt="This Is A Image" width="100%"></a>
+            <p>MI 100 cm (40 inches) 5A Series Full HD Smart Android LED TV with 24W Dolby Audio
+                ₹24,999</p>
+        </div>
+        <div>
+            <a href="product_page.html?id=iphone13"><img
+                    src="https://m.media-amazon.com/images/I/31TCJmM4+mL._SX342_SY445_.jpg" alt="This Is A Image"
+                    width="100%"></a>
+            <p>Apple iPhone 13 Pro (1TB) - Sierra Blue
+                ₹2,999</p>
+        </div>
+        <div>
+            <a href="product_page.html?id=honor"><img src="https://m.media-amazon.com/images/I/81tkpxBTz5L._SY450_.jpg"
+                    alt="This Is A Image" width="100%"></a>
+            <p>Honor MagicBook 14, AMD Ryzen 5 5500U 14-inch (35.56 cm)
+                ₹45,000 </p>
         </div>
     </div>
 </body>
-<footer>
+<!-- <footer>
     <a href="#">FAQ</a>
     <a href="#">Contact Us</a>
     <a href="#">Terms of Use</a>
     <a href="#">Privacy Policy</a>
     <a href="#" class="copyright">&copy; Copyright</a>
+</footer> -->
+<footer>
+    <section>
+        <div id="containerFooter">
+
+            <div id="webFooter">
+                <h3> online electronics </h3>
+                <p> Laptop </p>
+                <p> Smart Television </p>
+                <p> Smart Phone </p>
+                <p> PC Components </p>
+                <a href="#" class="copyright">&copy; Copyright</a>
+            </div>
+            <div id="webFooter">
+                <h3> helpful link </h3>
+                <p><a href="index.html">HOME</a></p>
+                <p> about </p>
+                <p><a href="form.html">CONTACT</a></p>
+            </div>
+            <div id="webFooter">
+                <h3> partners </h3>
+                <p>CROMA</p>
+                <p>AMAZON</p>
+                <p>FLIPKART</p>
+                <p> + many more </p>
+            </div>
+            <div id="webFooter">
+                <h3> address </h3>
+                <p> building 23</p>
+                <p> basavanagudi</p>
+                <p> bull temple road</p>
+                <p> bangalore </p>
+            </div>
+        </div>
+        <div id="credit"><a href="#"> © SAGAR C MANANNAVAR </a> &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp
+            <a href="#"> © RYAN THAPA </a> &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp
+            <a href="#"> © S KIRTHAN KUMAR </a> &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp <a href="index.html"> E-HUB
+            </a>
+        </div>
+    </section>
+
 </footer>
-<script>
+<!-- <script>
     function oncall(value) {
         if (value == "Laptop") {
             window.location.href = "listOfProducts_page.html?x=2";
@@ -213,6 +304,6 @@
             window.location.reload();
         }
     }
-</script>
+</script> -->
 
 </html>
