@@ -144,9 +144,7 @@
     <div class="login"><video autoplay loop>
             <source src="login.mp4" type="video/mp4">
     </div>
-
-    <form action="" class="loginPage">
-
+    <form action="index.html" class="loginPage">
         <div class="loginForm">
             <div class="ch">
                 <span><button class="change">Sign up</button></span>
@@ -158,20 +156,15 @@
             <br><br><input type="password" name="password" id="password" placeholder="Confirm password" minlength="8" required>
             <span class="checkSubmit">
                 <br><br><input type="checkbox" name="rememberMe" id="rememberMe">
-                <input type="submit" value="GET STARTED" id="getStarted" onclick="home()">
+                <input type="submit" value="GET STARTED" id="getStarted">
                 <input type="reset" value="RESET" id="reset">
             </span>
         </div>
-
     </form>
-
 </body>
 <script>
     function func2(){
         window.location.href="login.html"
-    }
-    function home(){
-        window.location.href="index.html"
     }
 </script>
 </html>

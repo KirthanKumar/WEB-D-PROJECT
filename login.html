@@ -90,9 +90,12 @@
         color: rgb(0, 0, 0);
         font-size: 20px;
         margin-top: 20px;
+        padding: 5px;
+        border-radius: 8px;
         margin-right: 15px;
         margin-left: 15px;
     }
+    
 
     .ch {
         margin: 15px;
@@ -152,7 +155,7 @@
             <source src="login.mp4" type="video/mp4">
     </div>
 
-    <form action="" class="loginPage">
+    <form action="index.html" class="loginPage">
         <div class="loginForm">
             <div class="ch">
                 <span><button class="change">Sign in</button></span>
@@ -166,21 +169,17 @@
             <input type="password" name="password" id="password" placeholder="Enter password" minlength="8" required>
             <span class="checkSubmit">
                 <br><br><input type="checkbox" name="rememberMe" id="rememberMe">
-                <input type="submit" value="GET STARTED" id="getStarted" onclick="home()">
+                <input type="submit" value="GET STARTED" id="getStarted">
                 <input type="reset" value="RESET" id="reset">
             </span>
             <br>
         </div>
-
     </form>
 
 </body>
 <script>
     function func() {//sign up form
         window.location.href = "signup.html";
-    }
-    function home() {//home page
-        window.location.href = "index.html";
     }
 </script>
 
