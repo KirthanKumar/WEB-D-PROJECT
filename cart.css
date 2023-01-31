@@ -1,114 +1,87 @@
-body
-{
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: ubuntu;
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    background-color:rgb(253, 252, 252);
 }
-#cartMainContainer
-{
-    padding: 90px 50px;
+nav{
+    background-color: rgb(0, 0, 0);
+    margin: 0px;
+    width:100%;
 }
-#cartContainer
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+#navbar{
+    position: sticky;
+    top: 0;
 }
-img
-{
-    width: 80px;
+nav ul{
+overflow: auto;
+}
+nav li{
+    
     float: left;
-    border-radius: 10px;
-    margin-right: 50px;
+    margin: 35px 45px;
+    font-size: larger;
 }
-#boxContainer
-{
-    display: grid;
-    grid-gap: 20px;
-    padding: 20px;
-    width: 100%;
-    /* float: left; */
-}
-#box
-{
-    background-color: white;
-    box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
-    border-radius: 10px;
-    width: 100%;
-    /* margin: auto */
-    padding: 20px 10px;
-}
-#box:hover
-{
-    box-shadow: 0px 1px 3px 2px rgb(185, 185, 185);
-}
-#totalContainer
-{
-    width: 50%;
-    padding: 20px;
-    margin: auto;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
-}
-#totalContainer:hover
-{
-    box-shadow: 0px 1px 3px 2px rgb(185, 185, 185);
-}
-button
-{
-    padding: 8px 12px;
-    background-color: rgb(3, 122, 122);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button a
-{
-    text-decoration: none;
+nav li a{
     color: white;
-    font-size: 15px;
+    text-decoration: none;
+    padding: 10px;
 }
-button:hover
-{
-    background-color: rgb(3, 94, 94);
+.company_name{
+    color: rgb(255, 255, 255);
+    float: left;
+    padding: 20px 45px;
+    font-size: 48px;
 }
-button a:focus
-{
-    outline: none;
+.search{
+    float: left;
+    color: rgb(63, 40, 40);
+    padding-left:  35px;
+    padding-right:  35px;
+    padding-top:  15px;
 }
-
-/* ----------------------------- MEDIA QUERY --------------------------- */
-
-@media(max-width: 800px)
-{
-    img
-    {
-        width: 60px;
-        margin-right: 20px;
-    }
-    h3, h4
-    {
-        font-size: 14px;
-    }
-    h2
-    {
-        font-size: 18px;
-    }
-    #cartMainContainer
-    {
-        padding: 90px 20px;
-    }
+#search{
+    font-size: 20px;
 }
-@media(max-width: 555px)
-{
-    #cartContainer
-    {
-        display: grid;
-        grid-template-columns: 1fr;
-    }    
-    #boxContainer
-    {
-        padding: 20px;
-        width: 80%;
-    }
+nav input{
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 20px 30px;
+}
+#cart{
+    color: black;
+    font-size: 40px;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    color: gray;
+    margin: 0;
+    padding: 0px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.products{
+    display: flex;
+    flex-direction: column;
+}
+.img{
+    float: left;
+    width: 30%;
+}
+.bt{
+    padding: 5px;
+    margin: 20px;
+}
+.description{
+    float: right;
+    width: 70%;
+    font-size:20px;
+    padding: 30px;
+    text-decoration: none;
+    color: rgb(0, 59, 59);
 }

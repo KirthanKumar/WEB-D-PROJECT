@@ -91,7 +91,7 @@ function productfilling(arr) {
     let div12 = document.createElement("div");
     div12.setAttribute("id", "buttons");
     let bt = document.createElement("a");
-    bt.setAttribute("href", "#");
+    bt.setAttribute("href", "cart.html?id="+arr.id);
     let b = document.createElement("button");
     b.setAttribute("class", "bt");
     b.innerHTML = "ADD TO CART"

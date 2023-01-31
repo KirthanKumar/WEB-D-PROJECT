@@ -1,32 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Cart </title>
     <link rel="stylesheet" href="cart.css">
-    <!-- favicon -->
-    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
-    <!-- header links -->
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-
+    <title>CART</title>
 </head>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        const url = window.location.href;
+        const id = url.slice(url.lastIndexOf('=') + 1);
+        matchingProduct(id);
+    }, false);
+</script>
 <body>
-
-        <!-- CART CONTAINER -->
-    <div id="cartMainContainer">
-        <h1> Checkout </h1>
-        <h3 id="totalItem"> Total Items: 0 </h3>
-
-        <div id="cartContainer">
-            <!-- JS rendered code -->
-        </div>
-
+    <nav id="navbar">
+        <ul>
+            <div class="company_name">E - HUB</div>
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="Search item">
+            </div>
+            <li><a href="index.html" target="_blank">HOME</a> </li>
+            <li><a href="form.html">CONTACT US</a></li>
+            <li><a href="cart.html">CART</a></li>
+        </ul>
+        <div id="heading"></div>
+    </nav>
+    <div id="cart">
+        MY CART
     </div>
+    <ul id="ulList" class="products">
 
+    </ul>
 </body>
-    
-<script src="cart.js"></script>
+<script>
+    function addProduct(arr){
+    let list = document.getElementById("ulList");
+    let li = document.createElement("li");
+    let div = document.createElement("div");
+    div.setAttribute("class", "img");
+    let img = document.createElement("img");
+    img.setAttribute("src", arr.imgurl1);
+    img.setAttribute("alt", "product");
+    img.setAttribute("width", "300");
+    img.setAttribute("height", "300");
+    div.appendChild(img);
+    li.append(div);
+    let desc = document.createElement("div");
+    desc.setAttribute("class", "description");
+    desc.innerText = arr.heading;
+    li.append(desc);
+    let buy = document.createElement("button");
+    buy.setAttribute("class", "bt");
+    buy.setAttribute("id", "buy");
+    buy.innerHTML = "BUY NOW";
+    let del = document.createElement("button");
+    del.setAttribute("class", "bt");
+    del.setAttribute("id", "btn");
+    del.setAttribute("onclick", "clear()");
+    del.innerHTML = "DELETE";
+    li.append(buy);
+    li.append(del);
+    list.appendChild(li);
+    }
+    // document.getElementById("btn").addEventListener("click", function () {
+    //     let list = document.getElementById("ulList");
+    //     list.innerHTML = '';
+    // });
+    // document.getElementById("buy").addEventListener("click", function () {
+    //     window.location.href="#";
+    // });
+    function clear() {
+        let list = document.getElementById("ulList");
+        while(list.firstChild){
+    div.removeChild(div.firstChild);
+}
+        // list.innerHTML = '';
+    }
+
+    function matchingProduct(id) {
+    const arr = arrs.filter(o => o.id === id)
+    addProduct(arr[0]);
+}
+</script>
+<script src="productData.js"></script>
 </html>
