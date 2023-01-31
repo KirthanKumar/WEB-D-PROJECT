@@ -334,7 +334,7 @@ div.login, video {
   
   @keyframes display {
     0% {
-      transform: translateX(200px);
+      transform: translateX(0);
       opacity: 0;
     }
     10% {
@@ -346,11 +346,11 @@ div.login, video {
       opacity: 1;
     }
     30% {
-      transform: translateX(-200px);
+      transform: translateX(0);
       opacity: 0;
     }
     100% {
-      transform: translateX(-200px);
+      transform: translateX(0);
       opacity: 0;
     }
   }
@@ -361,6 +361,7 @@ div.login, video {
     height: 300px;
     margin-top: 8vh;
     z-index: -1;
+    
   }
   
   .pic-ctn > img {
@@ -370,6 +371,7 @@ div.login, video {
     left: 4vw;
     opacity: 0;
     animation: display 10s infinite;
+    
   }
   
   img:nth-child(2) {
