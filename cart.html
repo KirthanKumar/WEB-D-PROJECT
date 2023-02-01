@@ -13,6 +13,7 @@
         idmatch();
     }, false);
 </script>
+
 <body>
     <nav id="navbar">
         <ul>
@@ -34,49 +35,58 @@
     </ul>
 </body>
 <script>
-    function addProduct(arr){
-    let list = document.getElementById("ulList");
-    let li = document.createElement("li");
-    let div = document.createElement("div");
-    div.setAttribute("class", "img");
-    let img = document.createElement("img");
-    img.setAttribute("src", arr.imgurl1);
-    img.setAttribute("alt", "product");
-    img.setAttribute("width", "300");
-    img.setAttribute("height", "300");
-    div.appendChild(img);
-    li.append(div);
-    let desc = document.createElement("div");
-    desc.setAttribute("class", "description");
-    desc.innerText = arr.heading;
-    li.append(desc);
-    let buy = document.createElement("button");
-    buy.setAttribute("class", "bt");
-    buy.setAttribute("id", "buy");
-    buy.innerHTML = "BUY NOW";
-    let del = document.createElement("button");
-    del.setAttribute("class", "bt");
-    del.setAttribute("id", "btn");
-    del.onclick = function() { clear() };
-    del.innerHTML = "DELETE";
-    li.append(buy);
-    li.append(del);
-    list.appendChild(li);
+    function addProduct(arr) {
+        let list = document.getElementById("ulList");
+        let li = document.createElement("li");
+        let div = document.createElement("div");
+        div.setAttribute("class", "img");
+        let img = document.createElement("img");
+        img.setAttribute("src", arr.imgurl1);
+        img.setAttribute("alt", "product");
+        img.setAttribute("width", "300");
+        img.setAttribute("height", "300");
+        div.appendChild(img);
+        li.append(div);
+        let desc = document.createElement("div");
+        desc.setAttribute("class", "description");
+        desc.innerText = arr.heading;
+        li.append(desc);
+        let buy = document.createElement("button");
+        buy.setAttribute("class", "bt");
+        buy.setAttribute("id", "buy");
+        buy.innerHTML = "BUY NOW";
+        let del = document.createElement("button");
+        del.setAttribute("class", "bt");
+        del.setAttribute("id", "btn");
+        del.onclick = function () { clear() };
+        del.innerHTML = "DELETE";
+        li.append(buy);
+        li.append(del);
+        list.appendChild(li);
     }
     function clear() {
+        localStorage.setItem("idc", JSON.stringify(idc));
         console.log("Clear")
-        let list = document.getElementById("ulList");
-        list.innerHTML = '';
+        var listElements = document.querySelectorAll("#ulList li");
+        var li = listElements[0];
+        li.parentNode.removeChild(li);
+        idc.shift();
+        localStorage.setItem("idc", JSON.stringify(idc));    
+        idc.shift();
     }
-
-    var idc = JSON.parse(localStorage.getItem("idc")); 
+    // function cl(){
+    //     localStorage.setItem("idc", JSON.stringify(idc));
+    //     idc.pop(0);
+    // }
+    var idc = JSON.parse(localStorage.getItem("idc"));
 
     function idmatch() {
-        idc.forEach(element => { 
+        idc.forEach(element => {
             const arr = arrs.filter(o => o.id === element)
             addProduct(arr[0]);
         });
     }
 </script>
 <script src="productData.js"></script>
+
 </html>

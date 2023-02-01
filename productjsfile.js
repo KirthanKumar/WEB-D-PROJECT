@@ -92,7 +92,7 @@ function productfilling(arr) {
     div12.setAttribute("id", "buttons");
     let bt = document.createElement("a");
     let b = document.createElement("button");
-    b.onclick = function() { idCollection()};
+    b.onclick = function() { idCollection(),idCollection(),alert("your Item is added to cart");};
     b.setAttribute("class", "bt");
     b.innerHTML = "ADD TO CART"
     bt.appendChild(b);
@@ -132,5 +132,4 @@ function idCollection(){
     const id = url.slice(url.lastIndexOf('=') + 1);  
     idc.push(id);
     console.log(idc);
-    alert("your Item is added to cart");
 }
