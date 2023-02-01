@@ -91,8 +91,8 @@ function productfilling(arr) {
     let div12 = document.createElement("div");
     div12.setAttribute("id", "buttons");
     let bt = document.createElement("a");
-    bt.setAttribute("href", "cart.html?id="+arr.id);
     let b = document.createElement("button");
+    b.onclick = function() { idCollection()};
     b.setAttribute("class", "bt");
     b.innerHTML = "ADD TO CART"
     bt.appendChild(b);
@@ -124,4 +124,13 @@ function productfilling(arr) {
 function matchingProduct(id) {
     const arr = arrs.filter(o => o.id === id)
     productfilling(arr[0]);
+}
+var idc = JSON.parse(localStorage.getItem("idc"));
+function idCollection(){
+    localStorage.setItem("idc", JSON.stringify(idc));
+    const url = window.location.href;
+    const id = url.slice(url.lastIndexOf('=') + 1);  
+    idc.push(id);
+    console.log(idc);
+    alert("your Item is added to cart");
 }

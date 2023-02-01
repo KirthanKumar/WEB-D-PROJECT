@@ -77,6 +77,10 @@
         <a href="#" class="copyright">&copy; Copyright</a>
     </footer>
 </body>
+<script>
+    var idc = JSON.parse(localStorage.getItem("idc"));
+    localStorage.setItem("idc", JSON.stringify(idc));
+</script>
 <script src="phone.js"></script>
 <script src="listOfProducts.js"></script>
 <script src="pc.js"></script>

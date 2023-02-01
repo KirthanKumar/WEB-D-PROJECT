@@ -10,9 +10,7 @@
 </head>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
-        const url = window.location.href;
-        const id = url.slice(url.lastIndexOf('=') + 1);
-        matchingProduct(id);
+        idmatch();
     }, false);
 </script>
 <body>
@@ -65,23 +63,20 @@
     li.append(del);
     list.appendChild(li);
     }
-    // document.getElementById("btn").addEventListener("click", function () {
-    //     let list = document.getElementById("ulList");
-    //     list.innerHTML = '';
-    // });
-    // document.getElementById("buy").addEventListener("click", function () {
-    //     window.location.href="#";
-    // });
     function clear() {
         console.log("Clear")
         let list = document.getElementById("ulList");
         list.innerHTML = '';
     }
 
-    function matchingProduct(id) {
-    const arr = arrs.filter(o => o.id === id)
-    addProduct(arr[0]);
-}
+    var idc = JSON.parse(localStorage.getItem("idc")); 
+
+    function idmatch() {
+        idc.forEach(element => { 
+            const arr = arrs.filter(o => o.id === element)
+            addProduct(arr[0]);
+        });
+    }
 </script>
 <script src="productData.js"></script>
 </html>
