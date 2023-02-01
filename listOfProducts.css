@@ -2,11 +2,11 @@
     box-sizing: border-box;
 }
 body{
-    font-family: ubuntu;
+    font-family:'League Spartan', sans-serif;
     margin: 0;
-    color: rgb(255, 255, 255);
+    color: #121212;
     font-size: 16px;
-    background-color:rgb(102, 48, 48);
+    background-color:#121212;
 }
 nav{
     background-color: rgb(0, 0, 0);
@@ -30,6 +30,12 @@ nav li a{
     text-decoration: none;
     padding: 10px;
 }
+nav li a:hover {
+    background-color: white;
+    transition: 0.5s;
+    color: black;
+    border-radius: 15px;
+}
 .company_name{
     color: rgb(255, 255, 255);
     float: left;
@@ -41,7 +47,7 @@ nav li a{
     color: rgb(63, 40, 40);
     padding-left:  35px;
     padding-right:  35px;
-    padding-top:  15px;
+    padding-top:  20px;
 }
 #search{
     font-size: 20px;
@@ -49,10 +55,10 @@ nav li a{
 nav input{
     border: 2px solid black;
     border-radius: 14px;
-    padding: 20px 30px;
+    padding: 15px 30px;
 }
 #side{
-    background: rgb(102, 48, 48);
+    background: #121212;
     padding: 28px;
     width: 30%;     
     font-size:  25px;
@@ -60,17 +66,22 @@ nav input{
     height: 100%;
     text-align: center;
 }
+label{
+    color: white;
+}
 .sortt{
-    background: rgb(199, 116, 141);
+    background: #121212;
     font-size: 18px;
     text-align: left;
+    color: white;
     padding: 15px;
+    border: 1px solid white;
     border-radius: 15px;
     margin-top: 10px;
     margin-bottom: 50px;
 }
 #productDetails{
-    background-color: rgb(70, 155, 230);
+    background-color: #121212;
     float: right;
     width: 70%;
 }
@@ -90,13 +101,16 @@ ul {
     margin: 0;
     padding: 0px;
 }
+#ulList{
+    border-left: 1px solid white;
+}
 .products{
     display: flex;
     flex-direction: column;
 }
 section li{
     padding: 20px;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid white;
 }
 :last-child {
     border: none;

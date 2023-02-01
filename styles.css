@@ -46,8 +46,10 @@ nav li a{
     padding: 10px;
 }
 nav li a:hover {
-    background-color: blueviolet;
-    color:rgb(255, 255, 255);
+    background-color: white;
+    transition: 0.5s;
+    color: black;
+    border-radius: 15px;
 }
 .company_name{
     color: rgb(255, 255, 255);
