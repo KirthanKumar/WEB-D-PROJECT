@@ -59,7 +59,7 @@
     let del = document.createElement("button");
     del.setAttribute("class", "bt");
     del.setAttribute("id", "btn");
-    del.setAttribute("onclick", "clear()");
+    del.onclick = function() { clear() };
     del.innerHTML = "DELETE";
     li.append(buy);
     li.append(del);
@@ -73,11 +73,9 @@
     //     window.location.href="#";
     // });
     function clear() {
+        console.log("Clear")
         let list = document.getElementById("ulList");
-        while(list.firstChild){
-    div.removeChild(div.firstChild);
-}
-        // list.innerHTML = '';
+        list.innerHTML = '';
     }
 
     function matchingProduct(id) {
