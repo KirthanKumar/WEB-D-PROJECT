@@ -299,8 +299,7 @@ Resolution : Full HD (1920 x 1080) Resolution | Refresh Rate : 60 Hertz | 178 De
         "imgurl5":"https://m.media-amazon.com/images/I/41xS2YmTCCL._SS40_.jpg",
         "heading":"Sony Bravia 108 cm (43 inches) Full HD Smart LED TV 43W6600 (Black) (2020 Model)",
         price:"45999",
-        features1: "Smart TV Features: Smart TV | Screen Mirroring | Netflix | HDR Gaming
-",
+        features1: "Smart TV Features: Smart TV | Screen Mirroring | Netflix | HDR Gaming",
         features2:"Easy returns: This product is eligible for replacement within 10 days of delivery in case of any product defects, damage or features not matching the description provided
 Sound output: 20 Watts Output | Open Baffle Speaker | ClearAudio+ technology | TV",
         features3:"Display: HDR | X-Reality Pro | Motionflow XR 200",
