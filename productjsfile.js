@@ -92,7 +92,7 @@ function productfilling(arr) {
     div12.setAttribute("id", "buttons");
     let bt = document.createElement("a");
     let b = document.createElement("button");
-    b.onclick = function() { idCollection(),idCollection(),alert("your Item is added to cart");};
+    b.onclick = function() { idCollection(),alert("your Item is added to cart");};
     b.setAttribute("class", "bt");
     b.innerHTML = "ADD TO CART"
     bt.appendChild(b);
@@ -126,11 +126,10 @@ function matchingProduct(id) {
     const arr = arrs.filter(o => o.id === id)
     productfilling(arr[0]);
 }
-var idc = JSON.parse(localStorage.getItem("idc"));
 function idCollection(){
-    localStorage.setItem("idc", JSON.stringify(idc));
     const url = window.location.href;
     const id = url.slice(url.lastIndexOf('=') + 1);  
-    idc.push(id);
-    console.log(idc);
+    var array = JSON.parse(localStorage.getItem("idc"));
+    array.push(id);
+    localStorage.setItem("idc", JSON.stringify(array));
 }

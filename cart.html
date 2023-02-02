@@ -66,22 +66,15 @@
         list.appendChild(li);
     }
     function clear() {
-        localStorage.setItem("idc", JSON.stringify(idc));
-        console.log("Clear")
         var listElements = document.querySelectorAll("#ulList li");
         var li = listElements[0];
         li.parentNode.removeChild(li);
-        idc.shift();
+        var idc = JSON.parse(localStorage.getItem("idc"));
+        idc.shift()
         localStorage.setItem("idc", JSON.stringify(idc));    
-        idc.shift();
     }
-    // function cl(){
-    //     localStorage.setItem("idc", JSON.stringify(idc));
-    //     idc.pop(0);
-    // }
-    var idc = JSON.parse(localStorage.getItem("idc"));
-
     function idmatch() {
+    var idc = JSON.parse(localStorage.getItem("idc"));
         idc.forEach(element => {
             const arr = arrs.filter(o => o.id === element)
             addProduct(arr[0]);
