@@ -97,8 +97,9 @@ function productfilling(arr) {
     b.innerHTML = "ADD TO CART"
     bt.appendChild(b);
     let bt2 = document.createElement("a");
-    bt2.setAttribute("href", "#");
+    //bt2.setAttribute("href", "#");
     let b2 = document.createElement("button");
+    b2.onclick = function() {alert("Prodcut not available for buying.");};
     b2.setAttribute("class", "bt");
     b2.innerHTML = "BUY NOW";
     bt2.appendChild(b2);

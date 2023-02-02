@@ -52,6 +52,7 @@
         desc.innerText = arr.heading;
         li.append(desc);
         let buy = document.createElement("button");
+        buy.onclick= function() {alert("Prodcut not available for buying.");};
         buy.setAttribute("class", "bt");
         buy.setAttribute("id", "buy");
         buy.innerHTML = "BUY NOW";
