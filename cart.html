@@ -38,6 +38,7 @@
     function addProduct(arr) {
         let list = document.getElementById("ulList");
         let li = document.createElement("li");
+        li.setAttribute("id", arr.id);
         let div = document.createElement("div");
         div.setAttribute("class", "img");
         let img = document.createElement("img");
@@ -52,29 +53,33 @@
         desc.innerText = arr.heading;
         li.append(desc);
         let buy = document.createElement("button");
-        buy.onclick= function() {alert("Prodcut not available for buying.");};
+        buy.onclick = function () { alert("Prodcut not available for buying."); };
         buy.setAttribute("class", "bt");
         buy.setAttribute("id", "buy");
         buy.innerHTML = "BUY NOW";
         let del = document.createElement("button");
         del.setAttribute("class", "bt");
         del.setAttribute("id", "btn");
-        del.onclick = function () { clear() };
+        del.onclick = function () { clear(arr.id) };
         del.innerHTML = "REMOVE";
         li.append(buy);
         li.append(del);
         list.appendChild(li);
     }
-    function clear() {
+    function clear(id) {
         var listElements = document.querySelectorAll("#ulList li");
-        var li = listElements[0];
-        li.parentNode.removeChild(li);
         var idc = JSON.parse(localStorage.getItem("idc"));
-        idc.shift()
-        localStorage.setItem("idc", JSON.stringify(idc));    
+        for (var i = 0; i < listElements.length; i++) {
+            if (listElements[i].id === id) {
+                let element = listElements[i];
+                element.parentNode.removeChild(element);
+                idc.splice(i, 1);
+            }
+        }
+        localStorage.setItem("idc", JSON.stringify(idc));
     }
     function idmatch() {
-    var idc = JSON.parse(localStorage.getItem("idc"));
+        var idc = JSON.parse(localStorage.getItem("idc"));
         idc.forEach(element => {
             const arr = arrs.filter(o => o.id === element)
             addProduct(arr[0]);
