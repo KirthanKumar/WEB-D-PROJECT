@@ -130,6 +130,9 @@ function idCollection(){
     const url = window.location.href;
     const id = url.slice(url.lastIndexOf('=') + 1);  
     var array = JSON.parse(localStorage.getItem("idc"));
+    if (array===null) {
+        alert("login required");        
+    }
     array.push(id);
     localStorage.setItem("idc", JSON.stringify(array));
 }
