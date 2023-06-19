@@ -29,7 +29,8 @@
 
     input[type="text"]#name,
     input[type="text"]#email,
-    input[type="password"]#password {
+    input[type="password"]#password,
+    input[type="password"]#cpassword {
         width: 100%;
         padding: 12px;
         border: 1px solid #ccc;
@@ -62,11 +63,13 @@
     .loginForm span.checkSubmit #getStarted {
         margin: 20px;
     }
+
     input[type="reset"]:hover {
         background-color: green;
         color: white;
     }
-    input[type="reset"]{
+
+    input[type="reset"] {
         background-color: rgb(248, 0, 0);
         color: white;
         padding: 5px 5px 5px 5px;
@@ -76,9 +79,11 @@
         width: 100%;
         font-weight: 900;
     }
+
     .loginForm span.checkSubmit #reset {
         margin: 20px;
     }
+
     .change {
         color: rgb(0, 0, 0);
         font-size: 20px;
@@ -146,16 +151,19 @@
     <div class="login"><video autoplay loop>
             <source src="login.mp4" type="video/mp4">
     </div>
-    <form action="index.html" class="loginPage">
+    <form class="loginPage">
         <div class="loginForm">
             <div class="ch">
                 <span><button class="change">Sign up</button></span>
                 <span><button class="change" onclick="func2()">Sign in</button></span>
             </div>
             <br> <input type="text" name="name" id="name" placeholder="User Name" required>
-            <br> <input type="text" name="email" id="email" placeholder="User BMSCE Email" required pattern=".+@bmsce.ac.in" required >
-            <br><br><input type="password" name="password" id="password" placeholder="Enter password" minlength="8" required>
-            <br><br><input type="password" name="password" id="password" placeholder="Confirm password" minlength="8" required>
+            <br> <input type="text" name="email" id="email" placeholder="User BMSCE Email" required
+                pattern=".+@bmsce.ac.in" required>
+            <br><br><input type="password" name="password" id="password" placeholder="Enter password" minlength="8"
+                required>
+            <br><br><input type="password" name="password" id="cpassword" placeholder="Confirm password" minlength="8"
+                required>
             <span class="checkSubmit">
                 <br><br><input type="checkbox" name="rememberMe" id="rememberMe">
                 <input type="submit" value="GET STARTED" id="getStarted">
@@ -164,9 +172,42 @@
         </div>
     </form>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script>
-    function func2(){
-        window.location.href="login.html"
+    function func2() {
+        window.location.href = "login.html"
     }
+    function verify() {
+        let password = document.getElementById("password").value;
+        let cpassword = document.getElementById("cpassword").value;
+        if (password === cpassword) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    $("form").submit(function (event) {
+        if (verify() === false) {
+            alert("Invalid password");
+            return;
+        } else {
+            $.post("http://localhost:3000/sign_up",
+                {
+                    username: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value,
+                    cpassword: document.getElementById("cpassword").value
+                },
+                function (data, status) {
+                    console.log(data);
+                    if (data === 'login failed') {
+                        alert('failed to register');
+                    } else
+                        alert('registered successful');
+                    window.location.href = '/index.html';
+                });
+        }
+    });
 </script>
+
 </html>
