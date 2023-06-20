@@ -35,6 +35,42 @@ app.post('/sign_up', function (req, res) {// registration of user
     });
     res.send("registered successful");
 });
+app.get('/list',(req,res)=>{// onloading listofproducts html page 
+    const type=req.query.type;
+    connection.query("SELECT * FROM products where product_type=?",[type], function (err, result, fields) {
+        if (err) res.send(err);
+        res.send(result);
+    });
+});
+app.get('/product',(req,res)=>{// onloading product html page 
+    const id=req.query.id;
+    connection.query("SELECT * FROM products where products_id=?",[id], function (err, result, fields) {
+        if (err) res.send(err);
+        res.send(result);
+    });
+});
+app.get('/cart',(req,res)=>{// onloading cart html page, user logged in check in frontend
+    const id=req.query.id;
+    connection.query("SELECT * FROM cart where username=?",[id], function (err, result, fields) {
+        if (err) res.send(err);
+        if (result.length===0) {
+            res.send("NO items");
+        }
+        res.send(result);
+    });
+});
+app.post('/addtocart',(req,res)=>{
+    const name=req.query.username;
+    const id=req.query.id;
+    const values = [[name,id]];
+    const sql = "insert into cart values ?";
+    connection.query(sql, [values], function (err) {
+        if (err) {
+            res.send('failed to insert');
+        }
+    });
+    res.send("added successfully");
+});
 
 // mysql setup
 const connection = mysql.createConnection({
