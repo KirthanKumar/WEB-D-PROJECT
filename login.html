@@ -195,10 +195,12 @@
             },
             function (data, status) {
                 console.log(data);
-                if (data="login success") {
+                if (data==="login success") {
                     alert("Login successful");
-                }else alert("Login failed");
-                window.location.href = '/index.html';
+                    window.location.href = '/index.html';
+                }else if(data==="user not found") alert("please sign up");
+                else alert("INCORRECT PASSWORD");
+                window.location.reload();
             });
     });
 </script>

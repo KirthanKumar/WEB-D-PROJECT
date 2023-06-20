@@ -188,7 +188,7 @@
     }
     $("form").submit(function (event) {
         if (verify() === false) {
-            alert("Invalid password");
+            alert("confirm password is not same as password");
             return;
         } else {
             $.post("http://localhost:3000/sign_up",
@@ -202,9 +202,11 @@
                     console.log(data);
                     if (data === 'login failed') {
                         alert('failed to register');
-                    } else
+                        window.location.reload();
+                    } else {
                         alert('registered successful');
-                    window.location.href = '/index.html';
+                        window.location.href = '/index.html';
+                    }
                 });
         }
     });

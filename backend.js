@@ -9,16 +9,19 @@ app.use(cors());
 // endpoints 
 app.post('/login', function (req, res) {// verification of login details
     let p = req.body.password;
-    console.log(p);
-    // let result;
-    let sql = "SELECT * FROM login where username=" + mysql.escape(req.body.username);
-    connection.query(sql, function (err, result, fields) {
+    let sql = "SELECT * FROM login where username =? and email=?";
+    connection.query(sql, [req.body.username,req.body.email], function (err, result, fields) {
         if (err) res.send(err);
-        console.log(result.password);
-        if (result.password === p) {
+        console.log(result);
+        if (result.length === 0) {
+            res.send("user not found");
+            return;
+        }
+        let password = result[0].password;
+        if (password === p) {
             res.send("login success");
         } else
-            res.send('login failed');
+            res.send('INCORRECT PASSWORD');
     });
 });
 app.post('/sign_up', function (req, res) {// registration of user 
@@ -49,7 +52,7 @@ connection.connect(function (err) {
     else {
         console.log("connection created with Mysql successfully");
     }
-    connection.query("SELECT * FROM t", function (err, result, fields) {
+    connection.query("SELECT * FROM login", function (err, result, fields) {
         if (err) console.log(err);
         console.log(result);
     });

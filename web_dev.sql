@@ -13,3 +13,5 @@ create table login(
 );
 insert into login(username, email, password) values('sagar','sagar.cs21@bmsce.ac.in','sagar123');
 select * from t;
+select * from login;
+SELECT * FROM login where username = "sagar";
