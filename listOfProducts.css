@@ -72,7 +72,7 @@ label{
 .sortt{
     background: #121212;
     font-size: 18px;
-    text-align: left;
+    text-align: center;
     color: white;
     padding: 15px;
     border: 1px solid white;
@@ -96,6 +96,14 @@ label{
     text-decoration: none;
     color: azure;
 }
+.price{
+    margin-top: 20px;
+    float: right;
+    width: 70%;
+    font-size:20px;
+    text-decoration: none;
+    color: azure;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -112,9 +120,6 @@ section li{
     padding: 20px;
     border-bottom: 1px solid white;
 }
-:last-child {
-    border: none;
-  }
 footer a{
     text-decoration: none;
     color: white;

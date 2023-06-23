@@ -37,8 +37,9 @@ app.post('/sign_up', function (req, res) {// registration of user
 });
 app.get('/list',(req,res)=>{// onloading listofproducts html page 
     const type=req.query.type;
-    connection.query("SELECT * FROM products where product_type=?",[type], function (err, result, fields) {
+    connection.query("SELECT products_id,price,imgurl1,title FROM products where product_type=?",[type], function (err, result, fields) {
         if (err) res.send(err);
+        console.log(result);
         res.send(result);
     });
 });
