@@ -29,11 +29,17 @@ create table products(
     feature3 varchar(400),
     feature4 varchar(400)
 );
+drop table cart;
+select distinct * from cart;
+truncate cart;
 create table cart(
     username varchar(20),
+    email varchar(40),
     product_id varchar(10),
     foreign key (product_id) references products(products_id)
 );
+select products_id from products where products_id like "one%";
+update products set imgurl1="https://m.media-amazon.com/images/I/41HKq7xofDL.jpg" where products_id='gtneo2';
 SELECT * FROM login where username =1 or 1 and email =2 or 2;
 desc products;
 select * from products where product_type = "pc";

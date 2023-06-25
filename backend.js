@@ -10,8 +10,8 @@ app.use(cors());
 app.post('/login', function (req, res) {// verification of login details
     let p = req.body.password;
     let sql = "SELECT * FROM login where username =? and email=?";
-    connection.query(sql, [req.body.username,req.body.email], function (err, result, fields) {
-        if (err) res.send(err);
+    connection.query(sql, [req.body.username, req.body.email], function (err, result, fields) {
+        if (err){console.log(err); res.send(err);}
         console.log(result);
         if (result.length === 0) {
             res.send("user not found");
@@ -19,7 +19,12 @@ app.post('/login', function (req, res) {// verification of login details
         }
         let password = result[0].password;
         if (password === p) {
-            res.send("login success");
+            let success = {
+                msg: "login successful",
+                username: result[0].username,
+                email: result[0].email
+            }
+            res.send(success);
         } else
             res.send('INCORRECT PASSWORD');
     });
@@ -30,47 +35,71 @@ app.post('/sign_up', function (req, res) {// registration of user
     const sql = "insert into login(username, email, password) values ?";
     connection.query(sql, [values], function (err) {
         if (err) {
+            console.log(err);
             res.send('login failed');
         }
     });
     res.send("registered successful");
 });
-app.get('/list',(req,res)=>{// onloading listofproducts html page 
-    const type=req.query.type;
-    connection.query("SELECT products_id,price,imgurl1,title FROM products where product_type=?",[type], function (err, result, fields) {
-        if (err) res.send(err);
-        console.log(result);
-        res.send(result);
-    });
-});
-app.get('/product',(req,res)=>{// onloading product html page 
-    const id=req.query.id;
-    connection.query("SELECT * FROM products where products_id=?",[id], function (err, result, fields) {
-        if (err) res.send(err);
-        res.send(result);
-    });
-});
-app.get('/cart',(req,res)=>{// onloading cart html page, user logged in check in frontend
-    const id=req.query.id;
-    connection.query("SELECT * FROM cart where username=?",[id], function (err, result, fields) {
-        if (err) res.send(err);
-        if (result.length===0) {
-            res.send("NO items");
+app.get('/list', (req, res) => {// onloading listofproducts html page 
+    const type = req.query.type;
+    connection.query("SELECT products_id,price,imgurl1,title FROM products where product_type=?", [type], function (err, result, fields) {
+        if (err) {
+            console.log(err); 
+            res.send(err);
+        }else{
+            res.send(result);
         }
-        res.send(result);
     });
 });
-app.post('/addtocart',(req,res)=>{
-    const name=req.query.username;
-    const id=req.query.id;
-    const values = [[name,id]];
+app.get('/product', (req, res) => {// onloading product html page 
+    const id = req.query.id;
+    connection.query("SELECT * FROM products where products_id=?", [id], function (err, result, fields) {
+        if (err) { console.log(err); res.send(err); }
+        else res.send(result);
+    });
+});
+app.get('/cart', (req, res) => {// onloading cart html page, user logged in check in frontend
+    const username = req.query.username;
+    const email = req.query.email;
+    connection.query("SELECT distinct * FROM cart,products where product_id=products_id and username=? and email=?", [username, email], function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+});
+app.post('/addtocart', (req, res) => {
+    const name = req.body.username;
+    const email = req.body.email;
+    const id = req.body.id;
+    const values = [[name, email, id]];
+    console.log(values);
     const sql = "insert into cart values ?";
     connection.query(sql, [values], function (err) {
         if (err) {
+            console.log(err);
             res.send('failed to insert');
-        }
+            return;
+        } else
+            res.send("added successfully");
     });
-    res.send("added successfully");
+});
+app.delete("/deletecart", (req, res) => {
+    console.log("deleted successfully");
+    const id = req.query.id;
+    const sql = "delete from cart where product_id =?";
+    connection.query(sql, [id], function (err) {
+        if (err) {
+            console.log(err);
+            res.send('failed to delete');
+            return;
+        } else
+            res.send("delete successfully");
+    });
 });
 
 // mysql setup

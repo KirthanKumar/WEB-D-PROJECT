@@ -133,21 +133,21 @@
                     <li> Select Category </li>
                 </option>
                 <option value="Laptop">
-                    <li><a href="listOfProducts_page.html?x=2" target="_blank">Laptop</a></li>
+                    <li><a href="listOfProducts_page.html?x=2" >Laptop</a></li>
                 </option>
                 <option value="Television">
-                    <li><a href="listOfProducts_page.html?x=3" target="_blank">Television</a></li>
+                    <li><a href="listOfProducts_page.html?x=3" >Television</a></li>
                 </option>
                 <option value="Mobile">
-                    <li><a href="listOfProducts_page.html?x=1" target="_blank">Mobile</a></li>
+                    <li><a href="listOfProducts_page.html?x=1" >Mobile</a></li>
                 </option>
                 <option value="PC-components">
-                    <li><a href="listOfProducts_page.html?x=4" target="_blank">PC-components</a></li>
+                    <li><a href="listOfProducts_page.html?x=4" >PC-components</a></li>
                 </option>
             </select>
-            <li><a href="form.html" target="_blank">Contact</a></li>
+            <li><a href="form.html" >Contact</a></li>
             <li>
-                <span class="cart"><a href="#">Cart</a><img class="cart_icon" src="icons8-cart-64.png" alt=""
+                <span class="cart"><a href="cart.html">Cart</a><img class="cart_icon" src="icons8-cart-64.png" alt=""
                         width="30px">
                 </span>
                 <span class="loginButton"><a href="login.html">Login</a></span>
@@ -195,10 +195,13 @@
             },
             function (data, status) {
                 console.log(data);
-                if (data==="login success") {
+                if (data.msg === "login successful") {
                     alert("Login successful");
-                    window.location.href = '/index.html';
-                }else if(data==="user not found") alert("please sign up");
+                    localStorage.setItem("username", data.username);
+                    localStorage.setItem("email", data.email);
+                    console.log("success");
+                    window.location.href = '/index.html'; return;
+                } else if (data === "user not found") alert("please sign up");
                 else alert("INCORRECT PASSWORD");
                 window.location.reload();
             });

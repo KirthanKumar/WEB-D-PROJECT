@@ -9,9 +9,47 @@
     <title>CART</title>
 </head>
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-        idmatch();
+    document.addEventListener('DOMContentLoaded', async () => {
+        const cartItem = await getItem();
+        if (cartItem.length === 0) {
+            let list = document.getElementById("ulList");
+            let li = document.createElement("li");
+            li.innerHTML = "no cart items available";
+            list.appendChild(li);
+        } else {
+            cartItem.forEach(element => {
+                addProduct(element);
+            });
+        }
     }, false);
+    async function getItem() {
+        const username = localStorage.getItem('username');
+        const email = localStorage.getItem('email');
+        if (username === null) {
+            alert('please login awail cart feature');
+            window.location.href = 'login.html';
+            return null;
+        } else {
+            let response = await fetch('http://localhost:3000/cart?username=' + username + "&email=" + email);
+            let data = response.json();
+            return data;
+        }
+    }
+    function removeItemCart(id) {
+        console.log('Removing item');
+        var listElements = document.querySelectorAll("#ulList li");
+        for (var i = 0; i < listElements.length; i++) {
+            if (listElements[i].id === id) {
+                let element = listElements[i];
+                element.parentNode.removeChild(element);
+            }
+        }
+        fetch("http://localhost:3000/deletecart?id=" + id,{
+            method: 'DELETE',
+        }).then(response =>{
+            console.log(response);
+        })
+    }
 </script>
 
 <body>
@@ -21,7 +59,7 @@
             <div class="search">
                 <input type="text" name="search" id="search" placeholder="Search item">
             </div>
-            <li><a href="index.html" target="_blank">HOME</a> </li>
+            <li><a href="index.html">HOME</a> </li>
             <li><a href="form.html">CONTACT US</a></li>
             <li><a href="cart.html">CART</a></li>
         </ul>
@@ -38,7 +76,7 @@
     function addProduct(arr) {
         let list = document.getElementById("ulList");
         let li = document.createElement("li");
-        li.setAttribute("id", arr.id);
+        li.setAttribute("id", arr.products_id);
         let div = document.createElement("div");
         div.setAttribute("class", "img");
         let img = document.createElement("img");
@@ -50,7 +88,7 @@
         li.append(div);
         let desc = document.createElement("div");
         desc.setAttribute("class", "description");
-        desc.innerText = arr.heading;
+        desc.innerText = arr.title;
         li.append(desc);
         let buy = document.createElement("button");
         buy.onclick = function () { alert("Prodcut not available for buying."); };
@@ -60,32 +98,11 @@
         let del = document.createElement("button");
         del.setAttribute("class", "bt");
         del.setAttribute("id", "btn");
-        del.onclick = function () { clear(arr.id) };
+        del.onclick = function () { removeItemCart(arr.products_id) };
         del.innerHTML = "REMOVE";
         li.append(buy);
         li.append(del);
         list.appendChild(li);
     }
-    function clear(id) {
-        var listElements = document.querySelectorAll("#ulList li");
-        var idc = JSON.parse(localStorage.getItem("idc"));
-        for (var i = 0; i < listElements.length; i++) {
-            if (listElements[i].id === id) {
-                let element = listElements[i];
-                element.parentNode.removeChild(element);
-                idc.splice(i, 1);
-            }
-        }
-        localStorage.setItem("idc", JSON.stringify(idc));
-    }
-    function idmatch() {
-        var idc = JSON.parse(localStorage.getItem("idc"));
-        idc.forEach(element => {
-            const arr = arrs.filter(o => o.id === element)
-            addProduct(arr[0]);
-        });
-    }
 </script>
-<script src="productData.js"></script>
-
 </html>
