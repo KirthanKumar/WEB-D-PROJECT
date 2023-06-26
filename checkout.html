@@ -1,193 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="checkout.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact US</title>
+  <link rel="stylesheet" href="checkout.css">
 </head>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", async () => {
+    const cartItem = await getItem();
+    var imageSrc = cartItem[0].imgurl1;
+    var itemTitle = cartItem[0].title;
+    var itemPrice = cartItem[0].price;
+    var itemQuantity = "Quantity: 1";
+    var itemDescription = [
+    cartItem[0].feature1, cartItem[0].feature2, cartItem[0].feature3, cartItem[0].feature4,
+    ];
+    var detailsItem = createDetailsItem(imageSrc, itemTitle, itemPrice, itemQuantity, itemDescription);
+    var hostElement = document.getElementById('section1');
+    hostElement.appendChild(detailsItem);
+
+  })
+  async function getItem() {
+    const url = new URL(window.location.href);
+    const id = url.searchParams.get("id");
+    console.log(id);
+    let response = await fetch('http://localhost:3000/checkout?id=' + id);
+    let data = response.json();
+    return data;
+  }
+  function createDetailsItem(imageSrc, itemTitle, itemPrice, itemQuantity, itemDescription) {
+    // Create the details__item div
+    var detailsItem = document.createElement("div");
+    detailsItem.classList.add("details__item");
+
+    // Create the item__image div
+    var itemImage = document.createElement("div");
+    itemImage.classList.add("item__image");
+
+    // Create the image element
+    var image = document.createElement("img");
+    image.classList.add("iphone");
+    image.src = imageSrc;
+    image.alt = "";
+
+    // Append the image element to the item__image div
+    itemImage.appendChild(image);
+
+    // Create the item__details div
+    var itemDetails = document.createElement("div");
+    itemDetails.classList.add("item__details");
+
+    // Create the item__title div
+    var title = document.createElement("div");
+    title.classList.add("item__title");
+    title.textContent = itemTitle;
+
+    // Create the item__price div
+    var price = document.createElement("div");
+    price.classList.add("item__price");
+    price.textContent = "₹"+itemPrice;
+
+    // Create the item__quantity div
+    var quantity = document.createElement("div");
+    quantity.classList.add("item__quantity");
+    quantity.textContent = itemQuantity;
+
+    // Create the item__description div
+    var description = document.createElement("div");
+    description.classList.add("item__description");
+
+    // Create the unordered list
+    var ul = document.createElement("ul");
+
+    // Create and append the list items
+    for (var i = 0; i < itemDescription.length; i++) {
+      var li = document.createElement("li");
+      li.textContent = itemDescription[i];
+      ul.appendChild(li);
+    }
+    description.appendChild(ul);
+
+    detailsItem.appendChild(itemImage);
+    detailsItem.appendChild(itemDetails);
+
+    itemDetails.appendChild(title);
+    itemDetails.appendChild(price);
+    itemDetails.appendChild(quantity);
+    itemDetails.appendChild(description);
+
+    return detailsItem;
+  }
+
+</script>
+
 <body>
-    <header>
-        <div class="container">
-          <div class="navigation">
-    
-            <div class="logo">
-              <i class="icon icon-basket"></i>E - HUB</div>
-            <div class="secure">
-              <i class="icon icon-shield"></i>
-              <span>Secure Checkout</span>
-    
-            </div>
-          </div>
-          <div class="notification">
-            Complete Your Purchase
-          </div>
-        </div>
-      </header>
-      <section class="content">
-    
-        <div class="container">
-    
-        </div>
-        <div class="details shadow">
-          <div class="details__item">
-    
-            <div class="item__image">
-              <img class="iphone" src="https://www.apple.com/v/iphone/compare/k/images/overview/compare_iphoneXSmax_silver_large.jpg" alt="">
-            </div>
-            <div class="item__details">
-              <div class="item__title">
-                Iphone X
-              </div>
-              <div class="item__price">
-                649,99 £
-              </div>
-              <div class="item__quantity">
-                Quantity: 1
-              </div>
-              <div class="item__description">
-                <ul>
-                  <li>Super fast and power efficient</li>
-                  <li>A lot of fast memory</li>
-                  <li>High resolution camera</li>
-                  <li>Smart tools for health and traveling and more</li>
-                  <li>Share your games and achievements with your friends via Group Play</li>
-                </ul>
-    
-              </div>
-    
-            </div>
-          </div>
-    
-        </div>
-        <div class="discount"></div>
-    
-        <div class="container">
-          <div class="payment">
-            <div class="payment__title">
-              Payment Method
-            </div>
-            <div class="payment__types">
-              <div class="payment__type payment__type--cc active">
-                <i class="icon icon-credit-card"></i>Credit Card</div>
-            </div>
-    
-            <div class="payment__info">
-              <div class="payment__cc">
-                <div class="payment__title">
-                  <i class="icon icon-user"></i>Personal Information
-                </div>
-                <form>
-                  <div class="form__cc">
-                    <div class="row">
-                      <div class="field">
-                        <div class="title">Credit Card Number
-                        </div>
-                        <input type="text" class="input txt text-validated" value="" />
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="field small">
-                        <div class="title">Expiry Date
-                        </div>
-                        <select class="input ddl">
-                          <option selected>01</option>
-                          <option>02</option>
-                          <option>03</option>
-                          <option>04</option>
-                          <option>05</option>
-                          <option>06</option>
-                          <option>07</option>
-                          <option>08</option>
-                          <option>09</option>
-                          <option>10</option>
-                          <option>11</option>
-                          <option>12</option>
-                        </select>
-                        <select class="input ddl">
-                          <option>01</option>
-                          <option>02</option>
-                          <option>03</option>
-                          <option>04</option>
-                          <option>05</option>
-                          <option>06</option>
-                          <option>07</option>
-                          <option>08</option>
-                          <option>09</option>
-                          <option>10</option>
-                          <option>11</option>
-                          <option>12</option>
-                          <option>13</option>
-                          <option>14</option>
-                          <option>15</option>
-                          <option selected>16</option>
-                          <option>17</option>
-                          <option>18</option>
-                          <option>19</option>
-                          <option>20</option>
-                          <option>21</option>
-                          <option>22</option>
-                          <option>23</option>
-                          <option>24</option>
-                          <option>25</option>
-                          <option>26</option>
-                          <option>27</option>
-                          <option>28</option>
-                          <option>29</option>
-                          <option>30</option>
-                          <option>31</option>
-                        </select>
-                      </div>
-                      <div class="field small">
-                        <div class="title">CVV Code
-                          <span class="numberCircle">?</span>
-                        </div>
-                        <input type="text" class="input txt" />
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="field">
-                        <div class="title">Name on Card
-                        </div>
-                        <input type="text" class="input txt" />
-                      </div>
-                    </div>
-    
-                  </div>
-                </form>
-              </div>
-              <div class="payment__shipping">
-                <div class="payment__title">
-                  <i class="icon icon-plane"></i> Shiping Information
-                </div>
-                <div class="title">
-                    Name:
-                    <input type="text" class="input txt">
-                    Date:
-                    <input type="date" class="input txt">
-                  </div>
-                  <div class="title">
-                    Sipping Address:
-                    <label>country, state, city</label>
-                    <input type="textarea" class="input txt">
-                    <label>area name, road</label>
-                    <input type="textarea" class="input txt">
-                </div>
-    
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="actions">
-    
-            <a href="#" class="btn action__submit">Place your Order
-              <i class="icon icon-arrow-right-circle"></i>
-            </a>
-            <a href="#" class="backBtn">Go Back to Shop</a>
-    
-          </div>
-      </section>
+  <nav id="navbar">
+    <ul>
+      <div class="company_name">E - HUB</div>
+      <div class="search">
+        <input type="text" name="search" id="search" placeholder="Search item">
       </div>
+      <li><a href="index.html">HOME</a> </li>
+      <li><a href="merchant.html"target="_blank">CONTACT US</a></li>
+      <li><a href="cart.html">CART</a></li>
+    </ul>
+    <div id="heading"></div>
+  </nav>
+  <header>
+    <div class="container">
+      <div class="notification">
+        Complete Your Purchase
+      </div>
+    </div>
+  </header>
+  <section class="content">
+    <div class="details shadow" id="section1">
+
+    </div>
+    <div class="container">
+      <div class="payment">
+        <div class="payment__title">
+          Payment Method
+        </div>
+        <div class="payment__types">
+          <div class="payment__type payment__type--cc active">
+            <i class="icon icon-credit-card"></i>Debit Card
+          </div>
+        </div>
+
+        <div class="payment__info">
+          <div class="payment__cc">
+            <div class="payment__title">
+              <i class="icon icon-user"></i>Personal Information
+            </div>
+            <form>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Name on Card
+                  </div>
+                  <input type="text" class="input txt" />
+                </div>
+              </div>
+              <div class="form__cc">
+                <div class="row">
+                  <div class="field">
+                    <div class="title">Debit Card Number
+                    </div>
+                    <input type="text" class="input txt text-validated" value="" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field small">
+                    <div class="title">Expiry Date
+                    </div>
+                    <select class="input ddl">
+                      <option selected>01</option>
+                      <option>02</option>
+                      <option>03</option>
+                      <option>04</option>
+                      <option>05</option>
+                      <option>06</option>
+                      <option>07</option>
+                      <option>08</option>
+                      <option>09</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                    </select>
+                    <select class="input ddl">
+                      <option>01</option>
+                      <option>02</option>
+                      <option>03</option>
+                      <option>04</option>
+                      <option>05</option>
+                      <option>06</option>
+                      <option>07</option>
+                      <option>08</option>
+                      <option>09</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                      <option>13</option>
+                      <option>14</option>
+                      <option>15</option>
+                      <option selected>16</option>
+                      <option>17</option>
+                      <option>18</option>
+                      <option>19</option>
+                      <option>20</option>
+                      <option>21</option>
+                      <option>22</option>
+                      <option>23</option>
+                      <option>24</option>
+                      <option>25</option>
+                      <option>26</option>
+                      <option>27</option>
+                      <option>28</option>
+                      <option>29</option>
+                      <option>30</option>
+                      <option>31</option>
+                    </select>
+                  </div>
+                  <div class="field small">
+                    <div class="title">CVV Code
+                      <span class="numberCircle">?</span>
+                    </div>
+                    <input type="text" class="input txt" />
+                  </div>
+                </div>
+                
+
+              </div>
+            </form>
+          </div>
+          <div class="payment__shipping">
+            <div class="payment__title">
+              <i class="icon icon-plane"></i> Shiping Information
+            </div>
+            <div class="title">
+              Name:
+              <input type="text" class="input txt">
+              Date:
+              <input type="date" class="input txt">
+            </div>
+            <div class="title">
+              Sipping Address:
+              <label>country, state, city</label>
+              <input type="textarea" class="input txt">
+              <label>area name, road</label>
+              <input type="textarea" class="input txt">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="actions">
+
+        <button href="#" onclick="alert('Order placed successfully')"  class="btn action__submit">Place your Order
+          <i class="icon icon-arrow-right-circle"></i>
+        </button>
+        <a href="index.html" class="backBtn">Go Back to Shop</a>
+
+      </div>
+  </section>
+  </div>
 </body>
+
 </html>

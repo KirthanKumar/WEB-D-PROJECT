@@ -98,7 +98,7 @@ function productfilling(arr) {
     let bt2 = document.createElement("a");
     //bt2.setAttribute("href", "#");
     let b2 = document.createElement("button");
-    b2.onclick = function () { alert("Prodcut not available for buying."); };
+    b2.onclick = function () {buy(arr.products_id);};
     b2.setAttribute("class", "bt");
     b2.innerHTML = "BUY NOW";
     bt2.appendChild(b2);
@@ -120,6 +120,10 @@ function productfilling(arr) {
     smallimg[3].onclick = function () {
         MainImg.src = smallimg[3].src;
     }
+}
+function buy(id){
+    console.log(id);
+    window.location.href = '/checkout.html?id='+id;
 }
 function idCollection() {
     const url = new URL(window.location.href);

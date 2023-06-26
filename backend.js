@@ -72,7 +72,7 @@ app.get('/cart', (req, res) => {// onloading cart html page, user logged in chec
         }
     });
 });
-app.post('/addtocart', (req, res) => {
+app.post('/addtocart', (req, res) => {// adding new entry to cart list
     const name = req.body.username;
     const email = req.body.email;
     const id = req.body.id;
@@ -88,7 +88,7 @@ app.post('/addtocart', (req, res) => {
             res.send("added successfully");
     });
 });
-app.delete("/deletecart", (req, res) => {
+app.delete("/deletecart", (req, res) => {// deleting items to cart list
     console.log("deleted successfully");
     const id = req.query.id;
     const sql = "delete from cart where product_id =?";
@@ -100,6 +100,31 @@ app.delete("/deletecart", (req, res) => {
         } else
             res.send("delete successfully");
     });
+});
+app.get('/checkout', (req, res) => {// onloading checkout html page, 
+    const id = req.query.id;
+    console.log(id);
+    connection.query("SELECT * FROM products where products_id=?", [id], function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+});
+app.post('/merchant', function (req, res) {// registration of user 
+    console.log(req.body);
+    const values = [[req.body.products_id, req.body.product_type, req.body.imgurl1, req.body.imgurl2, req.body.imgurl3, req.body.imgurl4, req.body.price, req.body.title, req.body.feature1, req.body.feature2, req.body.feature3, req.body.feature4]];
+    const sql = "insert into products values ?";
+    connection.query(sql, [values], function (err) {
+        if (err) {
+            console.log(err);
+            res.send('failed to insert products');  
+        }
+    });
+    res.send("successfully inserted products");
 });
 
 // mysql setup

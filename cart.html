@@ -60,7 +60,7 @@
                 <input type="text" name="search" id="search" placeholder="Search item">
             </div>
             <li><a href="index.html">HOME</a> </li>
-            <li><a href="form.html">CONTACT US</a></li>
+            <li><a href="merchant.html"target="_blank">CONTACT US</a></li>
             <li><a href="cart.html">CART</a></li>
         </ul>
         <div id="heading"></div>
@@ -91,7 +91,7 @@
         desc.innerText = arr.title;
         li.append(desc);
         let buy = document.createElement("button");
-        buy.onclick = function () { alert("Prodcut not available for buying."); };
+        buy.onclick = function () { window.location.href = 'checkout.html?id='+arr.products_id };
         buy.setAttribute("class", "bt");
         buy.setAttribute("id", "buy");
         buy.innerHTML = "BUY NOW";
