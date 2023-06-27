@@ -37,9 +37,10 @@ app.post('/sign_up', function (req, res) {// registration of user
         if (err) {
             console.log(err);
             res.send('login failed');
+        }else{
+            res.send("registered successful");
         }
     });
-    res.send("registered successful");
 });
 app.get('/list', (req, res) => {// onloading listofproducts html page 
     const type = req.query.type;
@@ -116,15 +117,16 @@ app.get('/checkout', (req, res) => {// onloading checkout html page,
 });
 app.post('/merchant', function (req, res) {// registration of user 
     console.log(req.body);
-    const values = [[req.body.products_id, req.body.product_type, req.body.imgurl1, req.body.imgurl2, req.body.imgurl3, req.body.imgurl4, req.body.price, req.body.title, req.body.feature1, req.body.feature2, req.body.feature3, req.body.feature4]];
+    const values = [[req.body.id, req.body.type, req.body.url1, req.body.url2, req.body.url3, req.body.url4, req.body.price, req.body.title, req.body.feature1, req.body.feature2, req.body.feature3, req.body.feature4]];
     const sql = "insert into products values ?";
     connection.query(sql, [values], function (err) {
         if (err) {
             console.log(err);
             res.send('failed to insert products');  
+        }else{
+            res.send("successfully inserted products");
         }
     });
-    res.send("successfully inserted products");
 });
 
 // mysql setup

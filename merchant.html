@@ -167,56 +167,87 @@
             </div>
             <label>Product Type</label>
             <div class="select-box">
-                <select>
+                <select id="type">
                     <option hidden>select type</option>
-                    <option>Laptop</option>
-                    <option>Television</option>
-                    <option>Smart Phone</option>
-                    <option>PC Components</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="tv">Television</option>
+                    <option value="phone">Smart Phone</option>
+                    <option value="pc">PC Components</option>
                 </select>
             </div>
             <div class="input-box">
                 <label>Product Title</label>
-                <input type="text" placeholder="Enter Product Name" name="productTitle" required />
+                <input type="text" id="title" placeholder="Enter Product Name" name="productTitle" required />
             </div>
             <div class="column">
                 <div class="input-box">
                     <label>Product ID</label>
-                    <input type="text" placeholder="Enter Product ID" name="productID" required />
+                    <input type="text" id="pid" placeholder="Enter Product ID" name="productID" required />
                 </div>
                 <div class="input-box">
                     <label>Product Price</label>
-                    <input type="number" placeholder="In INR" required />
+                    <input type="number" id="price" placeholder="In INR" required />
                 </div>
             </div>
             <div class="column">
                 <div class="input-box">
                     <label>Image1 URL</label>
-                    <input type="url" placeholder="First image URL" required />
+                    <input type="url" id="url1" placeholder="First image URL" required />
                 </div>
                 <div class="input-box">
                     <label>Image2 URL</label>
-                    <input type="url" placeholder="Second image URL" required />
+                    <input type="url" id="url2" placeholder="Second image URL" required />
                 </div>
                 <div class="input-box">
                     <label>Image3 URL</label>
-                    <input type="url" placeholder="Third image URL" required />
+                    <input type="url" id="url3" placeholder="Third image URL" required />
                 </div>
                 <div class="input-box">
                     <label>Image4 URL</label>
-                    <input type="url" placeholder="Fourth image URL" required />
+                    <input type="url" id="url4" placeholder="Fourth image URL" required />
                 </div>
             </div>
             <div class="input-box features">
                 <label>Product Features</label>
-                <input type="text" placeholder="List Product Features here" required />
-                <input type="text" placeholder="List Product Features here" required />
-                <input type="text" placeholder="List Product Features here" required />
-                <input type="text" placeholder="List Product Features here" required />
+                <input type="text" id="feature1" placeholder="List Product Features here" required />
+                <input type="text" id="feature2" placeholder="List Product Features here" required />
+                <input type="text" id="feature3" placeholder="List Product Features here" required />
+                <input type="text" id="feature4" placeholder="List Product Features here" required />
             </div>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </section>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>
+    $("form").submit(function (event) {
+        $.post("http://localhost:3000/merchant",
+            {
+                id: document.getElementById("pid").value,
+                type: document.getElementById("type").value,
+                title: document.getElementById("title").value,
+                price: document.getElementById("price").value,
+                url1: document.getElementById("url1").value,
+                url2: document.getElementById("url2").value,
+                url3: document.getElementById("url3").value,
+                url4: document.getElementById("url4").value,
+                feature1: document.getElementById("feature1").value,
+                feature2: document.getElementById("feature2").value,
+                feature3: document.getElementById("feature3").value,
+                feature4: document.getElementById("feature4").value
+            },
+            function (data, status) {
+                console.log(data);
+                if (data === "successful") {
+                    alert("successfully u have become a merchant");
+                    console.log("success");
+                }
+                else {
+                    alert("problem encountered while adding ur product in our website");
+                    window.location.reload();
+                }
+            });
+    });
+</script>
 
 </html>

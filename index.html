@@ -336,6 +336,7 @@
         if (confirm("profile\nsignout")) {
             localStorage.removeItem("username");
             localStorage.removeItem("email");
+            window.location.reload();
         } else {return;
         }
     }
