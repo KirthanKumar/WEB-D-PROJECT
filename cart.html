@@ -9,8 +9,9 @@
     <title>CART</title>
 </head>
 <script type="text/javascript">
+    let cartItem;
     document.addEventListener('DOMContentLoaded', async () => {
-        const cartItem = await getItem();
+        cartItem = await getItem();
         if (cartItem.length === 0) {
             let list = document.getElementById("ulList");
             let li = document.createElement("li");
@@ -21,7 +22,7 @@
                 addProduct(element);
             });
         }
-    }, false);
+    }, true);
     async function getItem() {
         const username = localStorage.getItem('username');
         const email = localStorage.getItem('email');
@@ -40,6 +41,7 @@
         var listElements = document.querySelectorAll("#ulList li");
         for (var i = 0; i < listElements.length; i++) {
             if (listElements[i].id === id) {
+                cartItem = cartItem.splice(i,1);
                 let element = listElements[i];
                 element.parentNode.removeChild(element);
             }
