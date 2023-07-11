@@ -4,23 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact US</title>
+  <title>Buy Now</title>
   <link rel="stylesheet" href="checkout.css">
 </head>
 <script type="text/javascript">
+  let cartItem, url
   document.addEventListener("DOMContentLoaded", async () => {
-    const cartItem = await getItem();
+    url = window.location.href;
+    cartItem = await getItem();
     var imageSrc = cartItem[0].imgurl1;
     var itemTitle = cartItem[0].title;
     var itemPrice = cartItem[0].price;
     var itemQuantity = "Quantity: 1";
     var itemDescription = [
-    cartItem[0].feature1, cartItem[0].feature2, cartItem[0].feature3, cartItem[0].feature4,
+      cartItem[0].feature1, cartItem[0].feature2, cartItem[0].feature3, cartItem[0].feature4,
     ];
     var detailsItem = createDetailsItem(imageSrc, itemTitle, itemPrice, itemQuantity, itemDescription);
     var hostElement = document.getElementById('section1');
     hostElement.appendChild(detailsItem);
-
+    totalp();
   })
   async function getItem() {
     const url = new URL(window.location.href);
@@ -60,14 +62,12 @@
     // Create the item__price div
     var price = document.createElement("div");
     price.classList.add("item__price");
-    price.textContent = "₹"+itemPrice;
+    price.textContent = "₹" + itemPrice;
 
     // Create the item__quantity div
     var quantity = document.createElement("div");
     quantity.classList.add("item__quantity");
-    // quantity.textContent = itemQuantity;
 
-    // Create the item__description div
     var description = document.createElement("div");
     description.classList.add("item__description");
 
@@ -81,7 +81,6 @@
       ul.appendChild(li);
     }
     description.appendChild(ul);
-
     detailsItem.appendChild(itemImage);
     detailsItem.appendChild(itemDetails);
 
@@ -90,6 +89,22 @@
     itemDetails.appendChild(quantity);
     itemDetails.appendChild(description);
 
+    var label = document.createElement("label");
+    label.innerHTML = "Quantity";
+    itemDetails.appendChild(label);
+    let b1 = document.createElement("button");
+    b1.innerHTML = "+";
+    b1.onclick = function () { inc(); }
+    var quantity = document.createElement("input");
+    quantity.setAttribute("type", "number");
+    quantity.setAttribute("id", "qty");
+    quantity.setAttribute("value", 1);
+    let b2 = document.createElement("button");
+    b2.innerHTML = "-";
+    b2.onclick = function () { dec(); }
+    itemDetails.appendChild(b1);
+    itemDetails.appendChild(quantity);
+    itemDetails.appendChild(b2);
     return detailsItem;
   }
 
@@ -103,7 +118,7 @@
         <input type="text" name="search" id="search" placeholder="Search item">
       </div>
       <li><a href="index.html">HOME</a> </li>
-      <li><a href="merchant.html"target="_blank">CONTACT US</a></li>
+      <li><a href="merchant.html" target="_blank">CONTACT US</a></li>
       <li><a href="cart.html">CART</a></li>
     </ul>
     <div id="heading"></div>
@@ -117,30 +132,29 @@
   </header>
   <section class="content">
     <div class="details shadow" id="section1">
-
     </div>
     <div class="container">
       <div class="payment">
         <div class="payment__title">
           Payment Method
         </div>
+        <div id="totalpr"></div>
         <div class="payment__types">
           <div class="payment__type payment__type--cc active">
             <i class="icon icon-credit-card"></i>Debit Card
           </div>
         </div>
-
         <div class="payment__info">
           <div class="payment__cc">
             <div class="payment__title">
               <i class="icon icon-user"></i>Personal Information
             </div>
-            <form>
               <div class="row">
                 <div class="field">
                   <div class="title">Name on Card
                   </div>
-                  <input type="text" class="input txt" />
+                  <input type="text" onkeydown="return /[a-z]/i.test(event.key)" id="nameinp" minlength="5" required
+                    class="input txt" />
                 </div>
               </div>
               <div class="form__cc">
@@ -148,7 +162,7 @@
                   <div class="field">
                     <div class="title">Debit Card Number
                     </div>
-                    <input type="text" class="input txt text-validated" value="" />
+                    <input type="number" id="debitno" minlength="16" required class="input txt text-validated" value="" />
                   </div>
                 </div>
                 <div class="row">
@@ -207,13 +221,10 @@
                     <div class="title">CVV Code
                       <span class="numberCircle">?</span>
                     </div>
-                    <input type="text" class="input txt" />
+                    <input type="text" id="cvv" class="input txt" />
                   </div>
                 </div>
-                
-
               </div>
-            </form>
           </div>
           <div class="payment__shipping">
             <div class="payment__title">
@@ -221,16 +232,16 @@
             </div>
             <div class="title">
               Name:
-              <input type="text" class="input txt">
+              <input type="text" id="nam" class="input txt">
               Date:
-              <input type="date" class="input txt">
+              <input type="date" id="date" class="input txt">
             </div>
             <div class="title">
               Sipping Address:
-              <label>country, state, city</label>
-              <input type="textarea" class="input txt">
-              <label>area name, road</label>
-              <input type="textarea" class="input txt">
+              <label>country, state, city area name, road</label>
+              <input type="textarea" id="Address" class="input txt">
+              <label>Phone no:</label>
+              <input type="number" minlength="10"id='pno' required class="input txt">
             </div>
 
           </div>
@@ -239,15 +250,61 @@
     </div>
     <div class="container">
       <div class="actions">
-
-        <button href="#" onclick="alert('Order placed successfully')"  class="btn action__submit">Place your Order
+        <button onclick="submitform()" class="btn action__submit">Place
+          your Order
           <i class="icon icon-arrow-right-circle"></i>
         </button>
         <a href="index.html" class="backBtn">Go Back to Shop</a>
-
       </div>
+      </form>
   </section>
   </div>
 </body>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+<script>
+  function totalp() {
+    let number = document.getElementById('qty');
+    let p = number.value * cartItem[0].price;
+    let tp = document.getElementById("totalpr");
+    tp.innerHTML = "Total price: ₹" + p;
+  }
+  function inc() {
+    let number = document.getElementById('qty');
+    number.value++;
+    totalp();
+  }
+
+  function dec() {
+    let number = document.getElementById('qty');
+    number.value--;
+    totalp();
+  }
+  function submitform() {
+    let numb = document.getElementById('totalpr');
+    let cname = document.getElementById('nameinp');
+    let dno = document.getElementById('debitno');
+    let cvv = document.getElementById('cvv');
+    let nam = document.getElementById('nam');
+    let pno = document.getElementById('pno');
+    let Address = document.getElementById('Address');
+    if (numb.innerHTML.includes('0')||numb.innerHTML.includes('-')) {
+      alert("Please enter a number of quantities more than one");
+    }else if (cname.value.length <5) {
+      alert("Please enter a valid name in the card");
+    } else if (dno.value.length !== 16) {
+      alert("Please enter valid 16 digit card number");
+    }else if(cvv.value.length !==3){
+      alert("Please enter valid 3 digit cvv number");
+    } else if (nam.value.length <3) {
+      alert("Please enter valid name");
+    }else if(Address.value.length <3){
+      alert("Please enter valid address");
+    } else if(pno.value.length !==10){
+      alert("Please enter valid phone number");
+    } else {
+      alert("order placed");
+    }
+  }
+</script>
 
 </html>

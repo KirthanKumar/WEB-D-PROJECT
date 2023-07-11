@@ -9,7 +9,7 @@
     <title>CART</title>
 </head>
 <script type="text/javascript">
-    let cartItem;
+    let cartItem,totalprice=0;
     document.addEventListener('DOMContentLoaded', async () => {
         cartItem = await getItem();
         if (cartItem.length === 0) {
@@ -19,9 +19,10 @@
             list.appendChild(li);
         } else {
             cartItem.forEach(element => {
+                totalprice+=element.price;
                 addProduct(element);
-            });
-        }
+            });console.log(totalprice);
+        }cartprice();
     }, true);
     async function getItem() {
         const username = localStorage.getItem('username');
@@ -35,6 +36,10 @@
             let data = response.json();
             return data;
         }
+    }
+    function cartprice(){
+        let price=document.getElementById('totalprice');
+        price.innerHTML ="your cart items combined price ₹"+totalprice;
     }
     function removeItemCart(id) {
         console.log('Removing item');
@@ -51,6 +56,7 @@
         }).then(response =>{
             console.log(response);
         })
+        window.location.reload();
     }
 </script>
 
@@ -70,8 +76,8 @@
     <div id="cart">
         MY CART
     </div>
+    <div id="totalprice">hjfkjh</div>
     <ul id="ulList" class="products">
-
     </ul>
 </body>
 <script>
@@ -92,6 +98,10 @@
         desc.setAttribute("class", "description");
         desc.innerText = arr.title;
         li.append(desc);
+        let price = document.createElement("div");
+        price.setAttribute("class","pricing");
+        price.innerText ="₹"+arr.price;
+        li.append(price);
         let buy = document.createElement("button");
         buy.onclick = function () { window.location.href = 'checkout.html?id='+arr.products_id };
         buy.setAttribute("class", "bt");
