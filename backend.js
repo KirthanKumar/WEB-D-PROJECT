@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 var cors = require('cors');
+var nodemailer = require('nodemailer');
 const app = express();
 const port = 3000;
 app.use(express.urlencoded({ extended: false }));
@@ -11,7 +12,7 @@ app.post('/login', function (req, res) {// verification of login details
     let p = req.body.password;
     let sql = "SELECT * FROM login where username =? and email=?";
     connection.query(sql, [req.body.username, req.body.email], function (err, result, fields) {
-        if (err){console.log(err); res.send(err);}
+        if (err) { console.log(err); res.send(err); }
         console.log(result);
         if (result.length === 0) {
             res.send("user not found");
@@ -37,7 +38,7 @@ app.post('/sign_up', function (req, res) {// registration of user
         if (err) {
             console.log(err);
             res.send('login failed');
-        }else{
+        } else {
             res.send("registered successful");
         }
     });
@@ -46,9 +47,9 @@ app.get('/list', (req, res) => {// onloading listofproducts html page
     const type = req.query.type;
     connection.query("SELECT products_id,price,imgurl1,title FROM products where product_type=?", [type], function (err, result, fields) {
         if (err) {
-            console.log(err); 
+            console.log(err);
             res.send(err);
-        }else{
+        } else {
             res.send(result);
         }
     });
@@ -122,12 +123,36 @@ app.post('/merchant', function (req, res) {// registration of user
     connection.query(sql, [values], function (err) {
         if (err) {
             console.log(err);
-            res.send('failed to insert products');  
-        }else{
+            res.send('failed to insert products');
+        } else {
             res.send("successfully inserted products");
         }
     });
 });
+app.post('/place', (req,res) => {
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: "sagarcm71@gmail.com",
+            pass: "orjqcdlaoisstycy",
+        }
+    });
+    var mailOptions = {
+        from: "sagarcm71@gmail.com",
+        to: req.body.email,
+        subject: "Your order is placed",
+        text: "The product " + req.body.title + " is placed successfully and you will receive it in a week",
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            res.send(error);
+        } else {
+            console.log('Email sent: ');
+            res.send("Success");
+        }
+    });
+})
 
 // mysql setup
 const connection = mysql.createConnection({
