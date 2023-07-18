@@ -160,7 +160,7 @@ const connection = mysql.createConnection({
     port: 3306,
     database: 'WEB_D_project',
     user: 'root',
-    password: 'sagar'//ur password for mysql connection
+    password: 'kirthan135@'//ur password for mysql connection
 });
 
 connection.connect(function (err) {

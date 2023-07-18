@@ -107,50 +107,56 @@
 
 <body>
     <nav id="navBar">
-        <label class="company_name">E - Hub</label><span class="search_bar">
+        <a href="login.html"><img id="logo" src="e-hub.png" alt="logo" width="110vh"></a>
+        <span class="search_bar">
             <input type="text" list="search_options" placeholder="Search item"><img class="search_icon"
                 src="icons8-search.gif" alt="" width="20px">
             <datalist id="search_options">
-                <option value="Samsung Galaxy M13">Samsung Galaxy M13</option>
-                <option value="Samsung Galaxy M14">Samsung Galaxy M14</option>
-                <option value="Lenovo ThinkBook 14 Gen 2">Lenovo ThinkBook 14 Gen 2</option>
-                <option value="XIAOMI Mi 12S ULTRA">XIAOMI Mi 12S ULTRA</option>
-                <option value="Apple MacBook Air">Apple MacBook Air</option>
-                <option value="Sony bravia 164cm">Sony bravia 164cm</option>
-                <option value="Croma 4K 1080p">Croma 4K 1080p</option>
-                <option value="Realme GT Neo 2 128 GB (Neo Blue, 8 GB RAM)"><a href="#">Realme GT Neo 2 128 GB (Neo
-                        Blue, 8 GB RAM)</a></option>
+                <option value="APPLE 2022 MacBook AIR M2">APPLE 2022 MacBook AIR M2</option>
+                <option value="LENOVA ThinkBook 14 Gen 2 (Intel)">LENOVA ThinkBook 14 Gen 2 (Intel)</option>
+                <option value="HP Pavilion Gaming Ryzen 7 Octa Core AMD R7-5800H">HP Pavilion Gaming Ryzen 7 Octa Core
+                    AMD R7-5800H</option>
+                <option value="DELL XPS 17">DELL XPS 17</option>
+                <option value="Honor MagicBook 14">Honor MagicBook 14</option>
+                <option value="Acer Aspire 3 Intel Core i3 11th Gen">Acer Aspire 3 Intel Core i3 11th Gen</option>
+                <option value="OnePlus 8T 5G">OnePlus 8T 5G</option>
+                <option value="Realme GT Neo 2 128 GB">Realme GT Neo 2 128 GB</option>
+                <option value="Apple iPhone 13 Pro (1TB)">Apple iPhone 13 Pro (1TB)</option>
+                <option value="Nothing Phone (1) 5G">Nothing Phone (1) 5G</option>
+                <option value="OnePlus 10R 5G">OnePlus 10R 5G</option>
+                <option value="iQOO 9 SE 5G">iQOO 9 SE 5G</option>
+
             </datalist>
         </span>
         <!-- &nbsp; -->
-        <span class="drop_down_icon">
+        <!-- <span class="drop_down_icon">
             <img class="drop_down" src="drop_down.png" alt="" width="20px">
-        </span>
+        </span> -->
         <ul>
             <li><a href="index.html">Home</a></li><select name="item_selection" id="item_selection"
-                class="item_selection">
+                onchange="oncall(value)" class="item_selection">
                 <option value="option">
                     <li> Select Category </li>
                 </option>
                 <option value="Laptop">
-                    <li><a href="listOfProducts_page.html?x=2">Laptop</a></li>
+                    <li>Laptop</a></li>
                 </option>
                 <option value="Television">
-                    <li><a href="listOfProducts_page.html?x=3">Television</a></li>
+                    <li>Television</a></li>
                 </option>
                 <option value="Mobile">
-                    <li><a href="listOfProducts_page.html?x=1">Mobile</a></li>
+                    <li>Mobile</a></li>
                 </option>
                 <option value="PC-components">
-                    <li><a href="listOfProducts_page.html?x=4">PC-components</a></li>
+                    <li>PC-components</a></li>
                 </option>
             </select>
-            <li><a href="form.html">Contact</a></li>
+            <li><a href="merchant.html" target="_blank">Contact US</a></li>
             <li>
                 <span class="cart"><a href="cart.html">Cart</a><img class="cart_icon" src="icons8-cart-64.png" alt=""
                         width="30px">
                 </span>
-                <span class="loginButton"><a href="login.html">Login</a></span>
+                <span class="loginButton" id="loginch"><a href="login.html">Login</a></span>
             </li>
         </ul>
     </nav>
@@ -200,10 +206,15 @@
                     localStorage.setItem("username", data.username);
                     localStorage.setItem("email", data.email);
                     console.log("success");
-                    window.location.href = '/index.html'; return;
-                } else if (data === "user not found") alert("please sign up");
-                else alert("INCORRECT PASSWORD");
-                window.location.reload();
+                    window.location.href = '/index.html'; 
+                } else if (data === "user not found") {
+                    alert("please sign up");
+                    window.location.reload();
+                }
+                else {
+                    alert("INCORRECT PASSWORD");
+                    window.location.reload();
+                }
             });
     });
 </script>

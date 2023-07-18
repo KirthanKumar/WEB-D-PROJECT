@@ -11,12 +11,27 @@
 </head>
 
 <style>
-    .flexbox,
     .flexboxbox {
         display: flex;
         max-width: 100%;
         position: absolute;
+        top: 165vh;
+    }
+
+    .flexboxchfm {
+        display: flex;
+        max-width: 30%;
+        position: absolute;
+        top: 145vh;
+        left: 35vw;
+    }
+
+    .flexbox{
+        display: flex;
+        max-width: 30%;
+        position: absolute;
         top: 125vh;
+        left: 35vw;
     }
 
     .flexbox div .pp {
@@ -24,10 +39,6 @@
         color: white;
         /* margin-left: 0;
         padding: 0; */
-    }
-
-    .flexboxbox {
-        top: 240vh;
     }
 
     .flexbox div,
@@ -54,7 +65,8 @@
 
 <body>
     <nav id="navBar">
-        <a href="login.html"><label class="company_name">E - Hub</label></a><span class="search_bar">
+        <a href="login.html"><img id="logo" src="e-hub.png" alt="logo" width="110vh"></a>
+        <span class="search_bar">
             <input type="text" list="search_options" placeholder="Search item"><img class="search_icon"
                 src="icons8-search.gif" alt="" width="20px">
             <datalist id="search_options">
@@ -75,9 +87,9 @@
             </datalist>
         </span>
         <!-- &nbsp; -->
-        <span class="drop_down_icon">
+        <!-- <span class="drop_down_icon">
             <img class="drop_down" src="drop_down.png" alt="" width="20px">
-        </span>
+        </span> -->
         <ul>
             <li><a href="index.html">Home</a></li><select name="item_selection" id="item_selection"
                 onchange="oncall(value)" class="item_selection">
@@ -108,103 +120,81 @@
     </nav>
     <br>
     <div class="pic-ctn">
-        <img src="https://source.unsplash.com/1400x700/?technology" alt="" class="pic">
-        <img src="https://source.unsplash.com/1400x700/?electronics" alt="" class="pic">
-        <img src="https://source.unsplash.com/1400x700/?coding" alt="" class="pic">
-        <img src="https://source.unsplash.com/1400x700/?CPU" alt="" class="pic">
-        <img src="https://source.unsplash.com/1400x700/?mobile" alt="" class="pic">
+        <img src="https://source.unsplash.com/1520x700/?technology" alt="image" class="pic">
+        <img src="https://source.unsplash.com/1520x700/?electronics" alt="image" class="pic">
+        <img src="https://source.unsplash.com/1520x700/?coding" alt="image" class="pic">
+        <img src="https://source.unsplash.com/1520x700/?CPU" alt="image" class="pic">
+        <img src="https://source.unsplash.com/1520x700/?mobile" alt="image" class="pic">
     </div>
-    <!-- Slideshow container -->
-    <div class="slideshow-container">
 
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-            <a href="listOfProducts_page.html?type=laptop" rel="noopener noreferrer"><img
-                    src="https://source.unsplash.com/1400x700/?laptop, coding" style="width:100%"></a>
-        </div>
 
-        <div class="mySlides fade">
-            <a href="listOfProducts_page.html?type=tv" rel="noopener noreferrer"><img
-                    src="https://source.unsplash.com/1400x700/?television" style="width:100%"></a>
-        </div>
-
-        <div class="mySlides fade">
-            <a href="listOfProducts_page.html?type=phone" rel="noopener noreferrer"><img
-                    src="https://source.unsplash.com/1400x700/?mobile" style="width:100%"></a>
-        </div>
-
-        <div class="mySlides fade">
-            <a href="listOfProducts_page.html?type=pc" rel="noopener noreferrer"><img
-                    src="https://source.unsplash.com/1400x700/?microprocesor, transistor" style="width:100%"></a>
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="mySlides pic-ctn" id="ms1">
+        <img src="https://source.unsplash.com/300x200/?technology" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?electronics" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?coding" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?CPU" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?mobile" alt="image" class="pic">
     </div>
-    <!-- The dots/circles -->
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
+
+    <div class="mySlides pic-ctn" id="ms2">
+        <img src="https://source.unsplash.com/300x200/?electronics" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?coding" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?CPU" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?mobile" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?technology" alt="image" class="pic">
+    </div>
+
+    <div class="mySlides pic-ctn" id="ms3">
+        <img src="https://source.unsplash.com/300x200/?coding" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?CPU" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?mobile" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?technology" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?electronics" alt="image" class="pic">
+    </div>
+
+    <div class="mySlides pic-ctn" id="ms4">
+        <img src="https://source.unsplash.com/300x200/?CPU" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?mobile" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?technology" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?electronics" alt="image" class="pic">
+        <img src="https://source.unsplash.com/300x200/?coding" alt="image" class="pic">
+    </div>
 
     </div>
     <div class="flexbox">
-        <div>
-            <a href="listOfProducts_page.html?type=tv" rel="noopener noreferrer"><img src="flexbox2.jpg"
-                    alt="This Is A Image" width="100%"></a>
-            <h2>Television</h2>
-            <p>The main benefit of a smart TV is access to many channels that offer TV programs, movies, and music
-                without the need to connect a TV antenna or subscribe to a cable/satellite service.</p>
-            <p class="pp"> Click <a href="listOfProducts_page.html?type=tv" rel="noopener noreferrer">Here</a> To See
-                More Products</p>
-        </div>
-        <div>
-            <a href="listOfProducts_page.html?type=laptop" rel="noopener noreferrer"><img src="flexbox1.jpg"
-                    alt="This Is A Image" width="100%"></a>
-            <h2>Laptop</h2>
-            <p>Today, laptops are used in a variety of settings, such as at work, in education, for playing games, web
-                browsing, for personal multimedia, and for general home computer use.</p>
-            <p class="pp"> Click <a href="listOfProducts_page.html?type=laptop" rel="noopener noreferrer">Here</a> To
-                See More Products</p>
-        </div>
-        <div>
+        <div class="boxes">
             <a href="listOfProducts_page.html?type=phone" rel="noopener noreferrer"><img src="flexbox4.jpg"
                     alt="This Is A Image" width="100%"></a>
-            <h2>Smart Phone</h2>
-            <p> A smartphone has more advanced features, including web browsing, software applications and a mobile OS.
-                And also allow people to access the internet, play games
-            </p>
-            <p class="pp"> Click <a href="listOfProducts_page.html?type=phone" rel="noopener noreferrer">Here</a> To See
-                More Products</p>
         </div>
-        <div>
+        <div class="boxes">
             <a href="listOfProducts_page.html?type=pc" rel="noopener noreferrer"><img src="flexbox3.jpg"
                     alt="This Is A Image" width="100%"></a>
-            <h2>PCcomponent</h2>
-            <p>The five basic components of a computer are Input Unit, Output Unit, Memory Unit, Control Unit and
-                ALU. All these combinational functionality helps in better use of memory.</p>
-            <p class="pp"> Click <a href="listOfProducts_page.html?type=pc" rel="noopener noreferrer">Here</a> To See
-                More Products</p>
         </div>
-        <div>
-            <a href="listOfProducts_page.html?type=laptop" rel="noopener noreferrer"><img src="flexbox5.jpg"
+        <div class="boxes">
+            <a href="listOfProducts_page.html?type=laptop" rel="noopener noreferrer"><img src="flexbox1.jpg"
                     alt="This Is A Image" width="100%"></a>
-            <h2>Laptop</h2>
-            <p>Generally, they help people in internet banking, online recharge, bill payment, listening to music,
-                watching movies, playing games, online education, internet surfing, etc.</p>
-            <p class="pp"> Click <a href="listOfProducts_page.html?type=laptop" rel="noopener noreferrer">Here</a> To
-                See More Products</p>
         </div>
-        <div>
-            <a href="listOfProducts_page.html?type=tv" rel="noopener noreferrer"><img src="slider3.jpg"
+        <div class="boxes">
+            <a href="listOfProducts_page.html?type=tv" rel="noopener noreferrer"><img src="flexbox2.jpg"
                     alt="This Is A Image" width="100%"></a>
-            <h2>Television</h2>
-            <p>We depend on TV for entertainment, news, education, culture, weather, sports and even music. The
-                television has become a common in many businesses, institutions and households.</p>
-            <p class="pp"> Click <a href="listOfProducts_page.html?type=tv" rel="noopener noreferrer">Here</a> To See
-                More Products</p>
+        </div>
+    </div>
+    <div class="flexboxchfm">
+        <div class="boxes">
+            <a href="listOfProducts_page.html?type=phone" rel="noopener noreferrer"><img src="click-logo.png"
+                    alt="This Is A Image" width="100%"></a>
+        </div>
+        <div class="boxes">
+            <a href="listOfProducts_page.html?type=pc" rel="noopener noreferrer"><img src="here-logo.png"
+                    alt="This Is A Image" width="100%"></a>
+        </div>
+        <div class="boxes">
+            <a href="listOfProducts_page.html?type=laptop" rel="noopener noreferrer"><img src="for-logo.png"
+                    alt="This Is A Image" width="100%"></a>
+        </div>
+        <div class="boxes">
+            <a href="listOfProducts_page.html?type=tv" rel="noopener noreferrer"><img src="more-logo.png"
+                    alt="This Is A Image" width="100%"></a>
         </div>
     </div>
     <br>
@@ -251,6 +241,8 @@
                 ₹45,000 </p>
         </div>
     </div>
+    
+        
 </body>
 <!-- <footer>
     <a href="#">FAQ</a>
@@ -337,12 +329,13 @@
             localStorage.removeItem("username");
             localStorage.removeItem("email");
             window.location.reload();
-        } else {return;
+        } else {
+            return;
         }
     }
 </script>
 <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded",()=>{
+    document.addEventListener("DOMContentLoaded", () => {
         login();
     })
 </script>
