@@ -133,12 +133,12 @@ app.post('/place', (req,res) => {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: "sagarcm71@gmail.com",
-            pass: "orjqcdlaoisstycy",
+            user: "Electronicshub24@gmail.com",
+            pass: "kgbmxkbwnepmzyxc",//enter app password of ur operating system 
         }
     });
     var mailOptions = {
-        from: "sagarcm71@gmail.com",
+        from: "Electronicshub24@gmail.com",
         to: req.body.email,
         subject: "Your order is placed",
         text: "The product " + req.body.title + " is placed successfully and you will receive it in a week",
@@ -160,7 +160,7 @@ const connection = mysql.createConnection({
     port: 3306,
     database: 'WEB_D_project',
     user: 'root',
-    password: 'kirthan135@'//ur password for mysql connection
+    password: 'sagar'//ur password for mysql connection
 });
 
 connection.connect(function (err) {

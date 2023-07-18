@@ -302,15 +302,26 @@
     } else if (pno.value.length !== 10) {
       alert("Please enter valid phone number");
     } else {
-      $.post("http://localhost:3000/place",
-        {
-          email: localStorage.getItem("email"),
-          title: cartItem[0].title
-        },
-        function (data, status) {
-          console.log(data);
-        });
-      alert("order placed you will receive a email soon");
+      if (localStorage.getItem("email") === null) {
+        alert("Please login to place order");
+        window.location.href = 'login.html';
+      } else {
+        $.post("http://localhost:3000/place",
+          {
+            email: localStorage.getItem("email"),
+            title: cartItem[0].title
+          },
+          function (data, status) {
+            console.log(data);
+            if (data==="success") {
+              alert("order placed you will receive a email soon");
+              window.location.href='index.html'
+            } else {
+              alert("couldn't place order please wait try again");
+              window.location.reload();
+            }
+          });
+      }
     }
   }  
 </script>
