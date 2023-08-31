@@ -149,5 +149,5 @@ function idCollection() {
     }
 
 }
-const baseURL = "http://localhost/api/";// comment this line to use in localhost environment
+const baseURL = "http://172.188.26.52/api/";// comment this line to use in localhost environment
 // const baseURL = "http://localhost:3000/";//uncomment to use in localhost environment
