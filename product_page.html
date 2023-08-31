@@ -41,14 +41,13 @@
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', async ()=> {
         const productdata= await getItem();
-        console.log(productdata);
         productfilling(productdata[0]);
     }, false);
     async function getItem(){
         const url = new URL(window.location.href);
         const id = url.searchParams.get("id");
         console.log(id);
-        let response = await fetch('http://localhost:3000/product?id='+id);
+        let response = await fetch(baseURL+'product?id='+id);
         let data = response.json();
         return data;
     }

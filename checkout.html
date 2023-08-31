@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="checkout.css">
 </head>
 <script type="text/javascript">
+  const baseURL = "http://localhost:3000/api/";//remove api/ to use in localhost environment
   let cartItem, url
   document.addEventListener("DOMContentLoaded", async () => {
     url = window.location.href;
@@ -28,7 +29,7 @@
     const url = new URL(window.location.href);
     const id = url.searchParams.get("id");
     console.log(id);
-    let response = await fetch('http://localhost:3000/checkout?id=' + id);
+    let response = await fetch(baseURL+'checkout?id=' + id);
     let data = response.json();
     return data;
   }
@@ -306,7 +307,7 @@
         alert("Please login to place order");
         window.location.href = 'login.html';
       } else {
-        $.post("http://localhost:3000/place",
+        $.post(baseURL+"place",
           {
             email: localStorage.getItem("email"),
             title: cartItem[0].title

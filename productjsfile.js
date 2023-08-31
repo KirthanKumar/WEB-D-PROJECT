@@ -136,7 +136,7 @@ function idCollection() {
         window.location.href = 'login.html';
         return ;
     } else {
-        $.post("http://localhost:3000/addtocart",
+        $.post(baseURL+"addtocart",
             {
                 username: username,
                 email: email,
@@ -149,3 +149,4 @@ function idCollection() {
     }
 
 }
+const baseURL = "http://localhost:3000/api/";//remove api/ to use in localhost environment

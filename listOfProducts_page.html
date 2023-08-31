@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="listOfProducts.css">
 </head>
 <script type="text/javascript">
+    const baseURL = "http://localhost:3000/api/";//remove api/ to use in localhost environment
     let Ptype;
     document.addEventListener('DOMContentLoaded', async ()=> {
         Ptype = await getItem();
@@ -17,7 +18,7 @@
     async function getItem(){
         const url = new URL(window.location.href);
         const type = url.searchParams.get("type");
-        let response = await fetch('http://localhost:3000/list?type='+type);
+        let response = await fetch(baseURL+'list?type='+type);
         let data = response.json();
         return data;
     }
