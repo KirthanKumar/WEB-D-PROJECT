@@ -149,4 +149,5 @@ function idCollection() {
     }
 
 }
-const baseURL = "http://localhost:3000/api/";//remove api/ to use in localhost environment
+const baseURL = "http://localhost/api/";// comment this line to use in localhost environment
+// const baseURL = "http://localhost:3000/";//uncomment to use in localhost environment

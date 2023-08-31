@@ -9,7 +9,8 @@
     <title>CART</title>
 </head>
 <script type="text/javascript">
-    const baseURL = "http://localhost:3000/api/";//remove api/ to use in localhost environment
+    const baseURL = "http://localhost/api/";// comment this line to use in localhost environment
+    // const baseURL = "http://localhost:3000/";//uncomment to use in localhost environment
     let cartItem, totalprice = 0;
     document.addEventListener('DOMContentLoaded', async () => {
         cartItem = await getItem();
