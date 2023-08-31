@@ -8,9 +8,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 // endpoints 
-// app.get('/', (req, res) => {
-//     res.send("Backend server is running");
-// });
+app.get('/', (req, res) => {
+    res.send("Backend server is running");
+});
 app.post('/login', function (req, res) {// verification of login details
     let p = req.body.password;
     let sql = "SELECT * FROM login where username =? and email=?";

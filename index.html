@@ -325,7 +325,7 @@
         }
     }
     function popup() {
-        if (confirm("profile\nsignout")) {
+        if (confirm("profile: "+localStorage.getItem("username")+"\nsignout")) {
             localStorage.removeItem("username");
             localStorage.removeItem("email");
             window.location.reload();
