@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 });
 app.post('/login', function (req, res) {// verification of login details
     let p = req.body.password;
+    console.log(req.body);
     let sql = "SELECT * FROM login where username =? and email=?";
     connection.query(sql, [req.body.username, req.body.email], function (err, result, fields) {
         if (err) { console.log(err); res.send(err); }
