@@ -186,8 +186,7 @@
     </form>
 
 </body>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script>
     const baseURL = "http://172.188.26.52/api/";// comment this line to use in localhost environment
     // const baseURL = "http://localhost:3000/";//uncomment to use in localhost environment
@@ -195,6 +194,7 @@
         window.location.href = "signup.html";
     }
     $("form").submit(function (event) {
+        event.preventDefault();
         $.post(baseURL+"login",
             {
                 username: document.getElementById("name").value,
