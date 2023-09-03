@@ -3,6 +3,357 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-HUB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navBar">
+        <a href="login.html"><img id="logo" src="e-hub.png" alt="logo" width="110vh"></a>
+        <span class="search_bar">
+            <input type="text" list="search_options" placeholder="Search item"><img class="search_icon"
+                src="icons8-search.gif" alt="" width="20px">
+            <datalist id="search_options">
+                <option value="APPLE 2022 MacBook AIR M2">APPLE 2022 MacBook AIR M2</option>
+                <option value="LENOVA ThinkBook 14 Gen 2 (Intel)">LENOVA ThinkBook 14 Gen 2 (Intel)</option>
+                <option value="HP Pavilion Gaming Ryzen 7 Octa Core AMD R7-5800H">HP Pavilion Gaming Ryzen 7 Octa Core
+                    AMD R7-5800H</option>
+                <option value="DELL XPS 17">DELL XPS 17</option>
+                <option value="Honor MagicBook 14">Honor MagicBook 14</option>
+                <option value="Acer Aspire 3 Intel Core i3 11th Gen">Acer Aspire 3 Intel Core i3 11th Gen</option>
+                <option value="OnePlus 8T 5G">OnePlus 8T 5G</option>
+                <option value="Realme GT Neo 2 128 GB">Realme GT Neo 2 128 GB</option>
+                <option value="Apple iPhone 13 Pro (1TB)">Apple iPhone 13 Pro (1TB)</option>
+                <option value="Nothing Phone (1) 5G">Nothing Phone (1) 5G</option>
+                <option value="OnePlus 10R 5G">OnePlus 10R 5G</option>
+                <option value="iQOO 9 SE 5G">iQOO 9 SE 5G</option>
+
+            </datalist>
+        </span>
+        <!-- &nbsp; -->
+        <!-- <span class="drop_down_icon">
+            <img class="drop_down" src="drop_down.png" alt="" width="20px">
+        </span> -->
+        <ul>
+            <li><a href="index.html">Home</a></li><select name="item_selection" id="item_selection"
+                onchange="oncall(value)" class="item_selection">
+                <option value="option">
+                    <li> Select Category </li>
+                </option>
+                <option value="Laptop">
+                    <li>Laptop</a></li>
+                </option>
+                <option value="Television">
+                    <li>Television</a></li>
+                </option>
+                <option value="Mobile">
+                    <li>Mobile</a></li>
+                </option>
+                <option value="PC-components">
+                    <li>PC-components</a></li>
+                </option>
+            </select>
+            <li><a href="merchant.html" target="_blank">Contact US</a></li>
+            <li>
+                <span class="cart"><a href="cart.html">Cart</a></span>
+            </li>
+            <li><span class="loginButton" id="loginch"><a href="login.html">Login</a></span></li>
+        </ul>
+    </nav>
+
+    <div class="slider-container">
+        <div class="slider">
+            <!-- <img src="https://source.unsplash.com/1520x700/?television" alt="Technology">
+            <img src="https://source.unsplash.com/1520x700/?electronics" alt="Electronics">
+            <img src="https://source.unsplash.com/1520x700/?coding" alt="Coding">
+            <img src="https://source.unsplash.com/1520x700/?CPU" alt="CPU">
+            <img src="https://source.unsplash.com/1520x700/?mobile" alt="Mobile"> -->
+            <img src="slide1.jpg" alt="Technology">
+            <img src="slide2.jpg" alt="Electronics">
+            <img src="slide3.jpg" alt="Coding">
+            <img src="slide4.jpg" alt="CPU">
+            <img src="slide5.jpg" alt="Mobile">
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-container">
+            <div class="product-image">
+                <a href="product_page.html?id=acerasp"><img
+                        src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666096848/Croma%20Assets/Computers%20Peripherals/Laptop/Images/263843_lyw43f.png/mxw_2256,f_auto"
+                        alt="This Is A Image" width="100%"></a>
+            </div>
+            <div class="product-details">
+                <p>Acer Aspire 3 Intel Core i3 11th Gen 15.6 inch, 8GB, 512GB, Windows 11 Home</p>
+                <p class="price">₹20,000</p>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-image">
+                <a href="product_page.html?id=oneplus8t"><img
+                        src="https://m.media-amazon.com/images/I/71UqqpGVheL._SL1500_.jpg" alt="This Is A Image"
+                        width="100%"></a>
+
+            </div>
+            <div class="product-details">
+                <p>OnePlus 8T 5G (Aquamarine Green, 8GB RAM, 128GB Storage)
+                </p>
+                <p class="price">₹45,000</p>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-image">
+                <a href="product_page.html?id=ssd500"><img
+                        src="https://m.media-amazon.com/images/I/61E7DbDiZ8L._AC_UY218_.jpg" alt="This Is A Image"
+                        width="100%"></a>
+
+            </div>
+            <div class="product-details">
+                <p> Crucial BX500 500 GB 2.5 - inch SATA 3D NAND Internal SSD Upto 550 MB/s
+
+                </p>
+                <p class="price">₹2,500</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-container">
+            <div class="product-image">
+                <a href="product_page.html?id=honor"><img
+                        src="https://m.media-amazon.com/images/I/71guAvSMbSL._SX679_.jpg" alt="This Is A Image"
+                        width="100%"></a>
+            </div>
+            <div class="product-details">
+                <p>Honor MagicBook 14, AMD Ryzen 5 5500U 14-inch (35.56 cm) FHD IPS Anti-Glare Thin and Light Laptop
+                    (16GB/512GB PCIe SSD/Windows 11/Fingerprint Login/Metal Body/Backlit KB/1.38Kg), Gray,
+                    NobelM-WFQ9AHNE</p>
+                <p class="price">₹45,000</p>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-image">
+                <a href="product_page.html?id=iqoo-se"><img
+                        src="https://m.media-amazon.com/images/I/618gFHEnXUL._SX679_.jpg" alt="This Is A Image"
+                        width="100%"></a>
+
+            </div>
+            <div class="product-details">
+                <p>iQOO 9 SE 5G (Space Fusion, 8GB RAM, 128GB Storage) | Qualcomm Snapdragon 888 | 66W Flash Charge
+                </p>
+                <p class="price">₹30,000</p>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-image">
+                <a href="product_page.html?id=sonytv"><img
+                        src="https://m.media-amazon.com/images/I/91v4nFq0LuL._SX679_.jpg" alt="This Is A Image"
+                        width="100%"></a>
+
+            </div>
+            <div class="product-details">
+                <p> Sony Bravia 108 cm (43 inches) Full HD Smart LED TV 43W6600 (Black) (2020 Model)
+                </p>
+                <p class="price">₹45,999</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sliderr-container">
+        <div class="product-slider">
+            <div class="product-slide">
+                <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666096848/Croma%20Assets/Computers%20Peripherals/Laptop/Images/263843_lyw43f.png/mxw_2256,f_auto"
+                    alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1657282804/Croma%20Assets/Computers%20Peripherals/Laptop/Images/256601_oocztd.png/mxw_2256,f_auto"
+                    alt="Product 2">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/51CgbCTiwlL._SX679_.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/51DmOWr3rnL._SX679_.jpg" alt="Product 2">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/71guAvSMbSL._SX679_.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/61uY1B3pTcL._SX679_.jpg" alt="Product 2">
+            </div>
+            <!-- Add more product slides as needed -->
+        </div>
+    </div>
+
+    <div class="sliderr-container">
+        <div class="product-slider">
+            <div class="product-slide">
+                <img src="https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-8t-1.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?g=tbn:ANd9GcTZWTBfJ4usqMRDuFUD8CkkPxUNFYX0gk-PBhE9igyDsYWRjq-I6nTdobMulr0llfU3sbGow-cyztw&usqp=CAU&ec=48665699"
+                    alt="Product 2">
+            </div>
+            <div class="product-slide">
+                <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1664009482/Croma%20Assets/Communication/Mobiles/Images/243461_0_tzq0y4.png/mxw_2256,f_auto"" alt="
+                    Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/31WwEhEX2UL.jpg" alt="Product 2">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/71BoiXkrEmL._SX679_.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/618gFHEnXUL._SX679_.jpg" alt="Product 2">
+            </div>
+            <div class="product-slide">
+                <img src="https://img.poorvika.com/cdn-cgi/image/width=1600,height=1600,quality=75/1600_JPG/Mobiles/oppo/Oppo-Reno-8-Pro/Oppo-Reno-8-Pro-Glazed-Green-03.jpg"
+                    alt="Product 2">
+            </div>
+            <!-- Add more product slides as needed -->
+        </div>
+    </div>
+
+    <div class="sliderr-container">
+        <div class="product-slider">
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/51FAWVStZiL._SX679_.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/41zJyZ5o8aL._SS40_.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/51LS6VC9i+L._SX679_.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/71VzCKKi6zL._SX679_.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/51n69E5rMZL._SX522_.jpg" alt="Product 1">
+            </div>
+        </div>
+    </div>
+
+    <div class="sliderr-container">
+        <div class="product-slider">
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/81rwiwQ1itL._SX679_.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1664429773/Croma%20Assets/Entertainment/Television/Images/258796_0_aul83w.png/mxw_2256,f_auto"
+                    alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/51ovMTXv9RL._SS40_.jpg" alt="Product 1">
+            </div>
+            <div class="product-slide">
+                <img src="https://m.media-amazon.com/images/I/91v4nFq0LuL._SX679_.jpg" alt="Product 1">
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <section>
+        <div id="containerFooter">
+
+            <div id="webFooter">
+                <h3> online electronics </h3>
+                <p> <a href="listOfProducts_page.html?type=laptop" rel="noopener noreferrer">Laptop</a> </p>
+                <p> <a href="listOfProducts_page.html?x=tv" rel="noopener noreferrer">Smart Television</a> </p>
+                <p> <a href="listOfProducts_page.html?type=phone" rel="noopener noreferrer">Smart Phone</a> </p>
+                <p> <a href="listOfProducts_page.html?type=pc" rel="noopener noreferrer">PC Components</a> </p>
+                <a href="#" class="copyright">&copy; Copyright</a>
+            </div>
+            <div id="webFooter">
+                <h3> helpful link </h3>
+                <p><a href="index.html">HOME</a></p>
+                <p> about </p>
+                <p><a href="form.html">CONTACT</a></p>
+            </div>
+            <div id="webFooter">
+                <h3> partners </h3>
+                <p>CROMA</p>
+                <p>AMAZON</p>
+                <p>FLIPKART</p>
+                <p> + many more </p>
+            </div>
+            <div id="webFooter">
+                <h3> address </h3>
+                <p> building 23</p>
+                <p> basavanagudi</p>
+                <p> bull temple road</p>
+                <p> bangalore </p>
+            </div>
+        </div>
+        <div id="credit"><a href="#"> © SAGAR C MANNANNAVAR </a> &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp
+            <a href="#"> © RYAN THAPA </a> &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp
+            <a href="#"> © S KIRTHAN KUMAR </a> &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp <a href="index.html"> E-HUB
+            </a>
+        </div>
+    </section>
+
+</footer>
+<script>
+    function oncall(value) {
+        if (value == "Laptop") {
+            window.location.href = "listOfProducts_page.html?type=laptop";
+        } else if (value == "Television") {
+            window.location.href = "listOfProducts_page.html?type=tv";
+        } else if (value == "Mobile") {
+            window.location.href = "listOfProducts_page.html?type=phone";
+        } else if (value == "PC-components") {
+            window.location.href = "listOfProducts_page.html?type=pc";
+        } else {
+            window.location.reload();
+        }
+    }
+    function login() {
+        let userName = localStorage.getItem("username");
+        console.log(userName);
+        if (userName === null) {
+            return;
+        } else {
+            let ch = document.getElementById("loginch");
+            ch.innerHTML = '';
+            let bt = document.createElement('button');
+            let img = document.createElement("img");
+            img.setAttribute('src', 'https://cdn-icons-png.flaticon.com/512/6681/6681204.png');
+            img.setAttribute('height', '50');
+            img.setAttribute('width', '50');
+            bt.appendChild(img);
+            ch.appendChild(bt);
+            bt.onclick = function () { popup(); };
+        }
+    }
+    function popup() {
+        if (confirm("profile: " + localStorage.getItem("username") + "\nsignout")) {
+            localStorage.removeItem("username");
+            localStorage.removeItem("email");
+            window.location.reload();
+        } else {
+            return;
+        }
+    }
+</script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        login();
+    })
+</script>
+
+</html>
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-HUB</title>
@@ -26,7 +377,7 @@
         left: 35vw;
     }
 
-    .flexbox{
+    .flexbox {
         display: flex;
         max-width: 30%;
         position: absolute;
@@ -85,12 +436,12 @@
                 <option value="iQOO 9 SE 5G">iQOO 9 SE 5G</option>
 
             </datalist>
-        </span>
-        <!-- &nbsp; -->
-        <!-- <span class="drop_down_icon">
+        </span>-->
+<!-- &nbsp; -->
+<!-- <span class="drop_down_icon">
             <img class="drop_down" src="drop_down.png" alt="" width="20px">
         </span> -->
-        <ul>
+<!--<ul>
             <li><a href="index.html">Home</a></li><select name="item_selection" id="item_selection"
                 onchange="oncall(value)" class="item_selection">
                 <option value="option">
@@ -207,8 +558,9 @@
                 ₹20,000</p>
         </div>
         <div>
-            <a href="product_page.html?id=oneplus8t"><img src="https://m.media-amazon.com/images/I/71UqqpGVheL._SL1500_.jpg"
-                    alt="This Is A Image" width="100%"></a>
+            <a href="product_page.html?id=oneplus8t"><img
+                    src="https://m.media-amazon.com/images/I/71UqqpGVheL._SL1500_.jpg" alt="This Is A Image"
+                    width="100%"></a>
             <p>OnePlus 8T 5G (Aquamarine Green, 8GB RAM, 128GB Storage)
                 ₹45,000</p>
         </div>
@@ -241,9 +593,9 @@
                 ₹45,000 </p>
         </div>
     </div>
-    
-        
-</body>
+
+
+</body>-->
 <!-- <footer>
     <a href="#">FAQ</a>
     <a href="#">Contact Us</a>
@@ -251,7 +603,7 @@
     <a href="#">Privacy Policy</a>
     <a href="#" class="copyright">&copy; Copyright</a>
 </footer> -->
-<footer>
+<!--<footer>
     <section>
         <div id="containerFooter">
 
@@ -325,7 +677,7 @@
         }
     }
     function popup() {
-        if (confirm("profile: "+localStorage.getItem("username")+"\nsignout")) {
+        if (confirm("profile: " + localStorage.getItem("username") + "\nsignout")) {
             localStorage.removeItem("username");
             localStorage.removeItem("email");
             window.location.reload();
@@ -340,4 +692,4 @@
     })
 </script>
 
-</html>
+</html>-->
