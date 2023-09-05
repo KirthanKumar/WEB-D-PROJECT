@@ -9,7 +9,7 @@ app.use(cors());
 
 // endpoints 
 app.get('/', (req, res) => {
-    res.send("Backend server is running");
+    res.send("Backend server is running at port 3000");
 });
 app.post('/login', function (req, res) {// verification of login details
     let p = req.body.password;

@@ -1,0 +1,24 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to your main branch name
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Build and Deploy
+      env:
+        MYSQL_ROOT_PASSWORD: sagar
+        MYSQL_DATABASE: WEB_D_project
+        DOCKERHUB_USERNAME: sagarcm13
+        DOCKERHUB_PASSWORD: sagarcm13
+      run: |
+        docker-compose build
+        docker-compose up -d

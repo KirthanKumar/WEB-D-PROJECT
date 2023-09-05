@@ -1,0 +1,5 @@
+# Use a base image with a web server (e.g., nginx) for hosting the frontend
+FROM nginx:latest
+
+# Copy all files from the myapp folder to the container's web root
+COPY . /usr/share/nginx/html/
