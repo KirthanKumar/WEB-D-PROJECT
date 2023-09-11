@@ -24,20 +24,29 @@ app.post('/login', function (req, res) {// verification of login details
         }
         let password = result[0].password;
         if (password === p) {
-            let success = {
-                msg: "login successful",
-                username: result[0].username,
-                email: result[0].email
+            if(req.body.fingerprint===result[0].fingerprint){
+                let success = {
+                    msg: "login successful",
+                    username: result[0].username,
+                    email: result[0].email
+                }
+                res.send(success);
+            }else{
+                let success = {
+                    msg: "fingerprint mismatch",
+                    username: result[0].username,
+                    email: result[0].email
+                }
+                res.send(success);
             }
-            res.send(success);
         } else
             res.send('INCORRECT PASSWORD');
     });
 });
 app.post('/sign_up', function (req, res) {// registration of user 
-    console.log(req.body);
-    const values = [[req.body.username, req.body.email, req.body.password]];
-    const sql = "insert into login(username, email, password) values ?";
+    console.log(req.body.fingerprint);
+    const values = [[req.body.username, req.body.email, req.body.password,req.body.fingerprint]];
+    const sql = "insert into login(username, email, password,fingerprint) values ?";
     connection.query(sql, [values], function (err) {
         if (err) {
             console.log(err);
@@ -146,6 +155,30 @@ app.post('/place', (req,res) => {
         to: req.body.email,
         subject: "Your order is placed",
         text: "The product " + req.body.title + " is placed successfully and you will receive it in a week",
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            res.send(error);
+        } else {
+            console.log('Email sent: ');
+            res.send("Success");
+        }
+    });
+})
+app.post('/verify', (req,res) => {
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: "Electronicshub24@gmail.com",
+            pass: "kgbmxkbwnepmzyxc",//enter app password of ur operating system 
+        }
+    });
+    var mailOptions = {
+        from: "Electronicshub24@gmail.com",
+        to: req.body.email,
+        subject: "unknown device access requested",
+        text: "An unknown device has logged into your account. Please verify whether this access is authorized. If it is you, please ignore this email. If not reply to this email as not recognized this furtner action is proceeded automatically"
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {

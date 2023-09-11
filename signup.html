@@ -198,7 +198,7 @@
                     username: document.getElementById("name").value,
                     email: document.getElementById("email").value,
                     password: document.getElementById("password").value,
-                    cpassword: document.getElementById("cpassword").value
+                    fingerprint: deviceInfo.fingerprint
                 },
                 function (data, status) {
                     console.log(data);
@@ -215,5 +215,27 @@
         }
     });
 </script>
-
+<script>
+  const deviceInfo = {};
+  deviceInfo.userAgent = navigator.userAgent;
+  deviceInfo.screenResolution = `${window.screen.width}x${window.screen.height}`;
+  deviceInfo.timezoneOffset = new Date().getTimezoneOffset();
+  deviceInfo.plugins = Array.from(navigator.plugins).map((plugin) => plugin.name);
+  deviceInfo.language = navigator.language || navigator.userLanguage;
+  deviceInfo.platform = navigator.platform;
+  deviceInfo.cookiesEnabled = navigator.cookieEnabled;
+  deviceInfo.fingerprint = generateFingerprint();
+  function generateFingerprint() {
+    const fingerprintHash = hashCode(JSON.stringify(deviceInfo));
+    return fingerprintHash;
+  }
+  function hashCode(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = (hash << 5) - hash + char;
+    }
+    return hash;
+  }
+</script>
 </html>

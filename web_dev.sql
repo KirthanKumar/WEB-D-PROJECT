@@ -6,6 +6,8 @@ create table t(//checking purpose table
 truncate TABLE t;
 insert into t values(1);
 desc login;
+truncate login;
+alter table login add Fingerprint varchar(20);
 create table login(
     username varchar(20),
     email varchar(40),
