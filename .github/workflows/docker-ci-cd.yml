@@ -3,22 +3,37 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Adjust this to your main branch name
+      - main # Replace with your main branch name
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Build and Deploy
-      env:
-        MYSQL_ROOT_PASSWORD: sagar
-        MYSQL_DATABASE: WEB_D_project
-        DOCKERHUB_USERNAME: sagarcm13
-        DOCKERHUB_PASSWORD: sagarcm13
-      run: |
-        docker-compose build
-        docker-compose up -d
+      - name: Build and push frontend and backend Docker images
+        run: |
+          docker build -t sagarcm13/web-d-projectgithubio_frontend -f dockerfile.frontend .
+          docker build -t sagarcm13/web-d-projectgithubio_backend -f dockerfile.backend .
+          echo ${{ dckr_pat_JXe7McPD4mO3wFtcp6JS7yvkfq8 }} | docker login -u ${{ sagarcm13 }} --password-stdin
+          docker push sagarcm13/web-d-projectgithubio_frontend
+          docker push sagarcm13/web-d-projectgithubio_backend
+        env:
+          DOCKERHUB_USERNAME: ${{ sagarcm13 }}
+          DOCKERHUB_TOKEN: ${{ sagarcm13 }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to production
+        run: |
+          # Pull and run the Docker images on your production server
+          docker-compose -f docker-compose.yml pull
+          docker-compose -f docker-compose.yml up -d
