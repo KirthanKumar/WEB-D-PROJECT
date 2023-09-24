@@ -17,12 +17,12 @@ jobs:
         run: |
           docker build -t sagarcm13/web-d-projectgithubio_frontend -f dockerfile.frontend .
           docker build -t sagarcm13/web-d-projectgithubio_backend -f dockerfile.backend .
-          echo ${{ dckr_pat_JXe7McPD4mO3wFtcp6JS7yvkfq8 }} | docker login -u ${{ sagarcm13 }} --password-stdin
+          echo dckr_pat_JXe7McPD4mO3wFtcp6JS7yvkfq8  | docker login -u sagarcm13 --password-stdin
           docker push sagarcm13/web-d-projectgithubio_frontend
           docker push sagarcm13/web-d-projectgithubio_backend
         env:
-          DOCKERHUB_USERNAME: ${{ sagarcm13 }}
-          DOCKERHUB_TOKEN: ${{ sagarcm13 }}
+          DOCKERHUB_USERNAME: sagarcm13
+          DOCKERHUB_TOKEN: dckr_pat_JXe7McPD4mO3wFtcp6JS7yvkfq8
 
   deploy:
     needs: build
